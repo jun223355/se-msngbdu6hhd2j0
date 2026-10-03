@@ -1,0 +1,205 @@
+<title>동바리 수평연결재 — 2방향의 뜻</title>
+<style>
+  :root {
+    --bg: #faf9f6;
+    --card: #ffffff;
+    --ink: #26251f;
+    --muted: #7d7a70;
+    --line: #e2dfd7;
+    --post: #3a5f8a;      /* 서포트(수직재) */
+    --tie: #c2542a;       /* 수평연결재 — 주인공 */
+    --tie2: #b8860b;      /* 앞뒤 방향 연결재 */
+    --brace: #3f7a45;     /* 가새(경사재) */
+    --slab: #d8d4c8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1b18; --card: #262420; --ink: #e8e6df; --muted: #9a968a;
+      --line: #3a3831; --post: #7fa8d4; --tie: #e07a4e; --tie2: #d4a83a; --brace: #7fbf86; --slab: #4a4740;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1c1b18; --card: #262420; --ink: #e8e6df; --muted: #9a968a;
+    --line: #3a3831; --post: #7fa8d4; --tie: #e07a4e; --tie2: #d4a83a; --brace: #7fbf86; --slab: #4a4740;
+  }
+  :root[data-theme="light"] {
+    --bg: #faf9f6; --card: #ffffff; --ink: #26251f; --muted: #7d7a70;
+    --line: #e2dfd7; --post: #3a5f8a; --tie: #c2542a; --tie2: #b8860b; --brace: #3f7a45; --slab: #d8d4c8;
+  }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: "Malgun Gothic", "맑은 고딕", "Apple SD Gothic Neo", sans-serif;
+    line-height: 1.6; margin: 0; padding: 28px 16px 60px;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+  h1 { font-size: 1.35rem; margin: 0; text-wrap: balance; }
+  h1 .accent { color: var(--tie); }
+  .rule {
+    background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--tie);
+    padding: 12px 16px; border-radius: 6px; font-size: 1rem;
+  }
+  .rule b { color: var(--tie); }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 8px;
+    padding: 16px; overflow-x: auto;
+  }
+  .card h2 { font-size: 1.02rem; margin: 0 0 4px; }
+  .card p.sub { margin: 0 0 12px; color: var(--muted); font-size: 0.88rem; }
+  svg { display: block; max-width: 100%; height: auto; }
+  .legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.85rem; color: var(--muted); margin-top: 10px; }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .sw { width: 22px; height: 5px; border-radius: 2px; display: inline-block; }
+  .memo {
+    text-align: center; font-size: 1.05rem; background: var(--card);
+    border: 1px dashed var(--line); border-radius: 8px; padding: 14px;
+  }
+@media print{ body{background:#fff;} .card,.memo,.legend,svg{break-inside:avoid; page-break-inside:avoid;} }
+</style>
+
+<div class="wrap">
+  <h1>동바리(파이프서포트) 높이 3.5m 초과 시 — <span class="accent">수평연결재 2방향</span>이란?</h1>
+
+  <div class="rule">
+    답안 문구: 높이 <b>2m 이내마다</b> 수평연결재를 <b>2개 방향</b>으로 설치하고, 수평연결재의 <b>변위를 방지</b>할 것
+  </div>
+
+  <div class="card">
+    <h2>① 옆에서 본 모습 — "2m 이내마다"</h2>
+    <p class="sub">서포트가 3.5m보다 높으면 가늘고 길어 옆으로 휘청(좌굴) → 2m마다 층층이 묶는다</p>
+    <svg viewBox="0 0 640 360" role="img" aria-label="동바리 옆면도: 2m마다 수평연결재">
+      <!-- 슬래브 거푸집 -->
+      <rect x="60" y="30" width="440" height="22" fill="var(--slab)" stroke="var(--muted)"/>
+      <text x="280" y="22" text-anchor="middle" font-size="15" fill="var(--muted)">슬래브 거푸집</text>
+      <!-- 바닥 -->
+      <line x1="40" y1="330" x2="520" y2="330" stroke="var(--ink)" stroke-width="3"/>
+      <text x="530" y="335" font-size="15" fill="var(--muted)">바닥</text>
+      <!-- 서포트 4개 -->
+      <line x1="110" y1="52" x2="110" y2="330" stroke="var(--post)" stroke-width="7"/>
+      <line x1="230" y1="52" x2="230" y2="330" stroke="var(--post)" stroke-width="7"/>
+      <line x1="350" y1="52" x2="350" y2="330" stroke="var(--post)" stroke-width="7"/>
+      <line x1="470" y1="52" x2="470" y2="330" stroke="var(--post)" stroke-width="7"/>
+      <!-- 수평연결재 2단 -->
+      <line x1="90" y1="145" x2="490" y2="145" stroke="var(--tie)" stroke-width="6"/>
+      <line x1="90" y1="238" x2="490" y2="238" stroke="var(--tie)" stroke-width="6"/>
+      <text x="497" y="150" font-size="15" fill="var(--tie)" font-weight="bold">수평연결재</text>
+      <text x="497" y="243" font-size="15" fill="var(--tie)" font-weight="bold">수평연결재</text>
+      <!-- 가새(경사재): 수직재와 수평재를 비스듬히 X자로 연결 -->
+      <line x1="110" y1="238" x2="230" y2="145" stroke="var(--brace)" stroke-width="5"/>
+      <line x1="110" y1="145" x2="230" y2="238" stroke="var(--brace)" stroke-width="5"/>
+      <line x1="350" y1="330" x2="470" y2="238" stroke="var(--brace)" stroke-width="5"/>
+      <line x1="350" y1="238" x2="470" y2="330" stroke="var(--brace)" stroke-width="5"/>
+      <text x="170" y="130" text-anchor="middle" font-size="15" fill="var(--brace)" font-weight="bold">가새(X자)</text>
+      <text x="410" y="225" text-anchor="middle" font-size="15" fill="var(--brace)" font-weight="bold">가새(X자)</text>
+      <!-- 치수선: 2m 이내 -->
+      <line x1="68" y1="145" x2="68" y2="238" stroke="var(--muted)" stroke-width="1.5"/>
+      <polygon points="68,145 64,153 72,153" fill="var(--muted)"/>
+      <polygon points="68,238 64,230 72,230" fill="var(--muted)"/>
+      <text x="60" y="196" text-anchor="end" font-size="14" fill="var(--ink)">2m 이내</text>
+      <line x1="68" y1="238" x2="68" y2="330" stroke="var(--muted)" stroke-width="1.5"/>
+      <polygon points="68,330 64,322 72,322" fill="var(--muted)"/>
+      <text x="60" y="288" text-anchor="end" font-size="14" fill="var(--ink)">2m 이내</text>
+      <!-- 전체높이 -->
+      <line x1="580" y1="52" x2="580" y2="330" stroke="var(--muted)" stroke-width="1.5"/>
+      <polygon points="580,52 576,60 584,60" fill="var(--muted)"/>
+      <polygon points="580,330 576,322 584,322" fill="var(--muted)"/>
+      <text x="590" y="195" font-size="14" fill="var(--ink)" writing-mode="tb">높이 3.5m 초과</text>
+    </svg>
+    <div class="legend">
+      <span><span class="sw" style="background:var(--post)"></span>서포트(수직재)</span>
+      <span><span class="sw" style="background:var(--tie)"></span>수평연결재</span>
+      <span><span class="sw" style="background:var(--brace)"></span>가새(경사재) — 수직·수평재에 비스듬히 X자, 격자가 마름모로 찌그러지는 것 방지(구조적 안정)</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>② 위에서 내려다본 모습 — "2개 방향"</h2>
+    <p class="sub">개수 2개가 아니라 방향 2개: 좌우로도 묶고 + 앞뒤로도 묶어 우물 정(井)자 격자</p>
+    <svg viewBox="0 0 640 330" role="img" aria-label="동바리 평면도: 2방향 수평연결재 격자">
+      <!-- 앞뒤 방향(세로) 연결재 -->
+      <line x1="140" y1="60" x2="140" y2="270" stroke="var(--tie2)" stroke-width="5"/>
+      <line x1="270" y1="60" x2="270" y2="270" stroke="var(--tie2)" stroke-width="5"/>
+      <line x1="400" y1="60" x2="400" y2="270" stroke="var(--tie2)" stroke-width="5"/>
+      <!-- 좌우 방향(가로) 연결재 -->
+      <line x1="90" y1="90" x2="450" y2="90" stroke="var(--tie)" stroke-width="5"/>
+      <line x1="90" y1="165" x2="450" y2="165" stroke="var(--tie)" stroke-width="5"/>
+      <line x1="90" y1="240" x2="450" y2="240" stroke="var(--tie)" stroke-width="5"/>
+      <!-- 서포트 (교차점 위에 점) -->
+      <g fill="var(--post)">
+        <circle cx="140" cy="90" r="11"/><circle cx="270" cy="90" r="11"/><circle cx="400" cy="90" r="11"/>
+        <circle cx="140" cy="165" r="11"/><circle cx="270" cy="165" r="11"/><circle cx="400" cy="165" r="11"/>
+        <circle cx="140" cy="240" r="11"/><circle cx="270" cy="240" r="11"/><circle cx="400" cy="240" r="11"/>
+      </g>
+      <!-- 라벨 -->
+      <text x="460" y="95" font-size="15" fill="var(--tie)" font-weight="bold">← 방향① 좌우로 묶기</text>
+      <text x="140" y="42" font-size="15" fill="var(--tie2)" font-weight="bold">↓ 방향② 앞뒤로 묶기</text>
+      <text x="90" y="305" font-size="15" fill="var(--muted)">● = 서포트(위에서 본 것) / 두 방향이 만나 井자 격자 완성</text>
+    </svg>
+    <div class="legend">
+      <span><span class="sw" style="background:var(--post)"></span>서포트(수직재)</span>
+      <span><span class="sw" style="background:var(--tie)"></span>수평연결재 — 방향①</span>
+      <span><span class="sw" style="background:var(--tie2)"></span>수평연결재 — 방향②</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>③ 받침철물(잭베이스) 겹침길이 — "전체길이의 1/3 이상"</h2>
+    <p class="sub">높이 맞춘다고 많이 뽑아 쓰면 꽂힌 부분이 짧아져 휘거나 빠짐 → 1/3 이상은 파이프 안에</p>
+    <svg viewBox="0 0 660 400" role="img" aria-label="받침철물과 수직재 조립: 겹침길이 1/3 이상">
+      <!-- ===== 왼쪽: 부품 따로 ===== -->
+      <text x="140" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="var(--ink)">[부품 2개]</text>
+      <!-- 받침철물 = 바닥판+나사봉+너트 일체형 -->
+      <rect x="60" y="345" width="100" height="10" fill="var(--tie)"/>
+      <rect x="104" y="185" width="12" height="160" fill="var(--tie)"/>
+      <rect x="92" y="255" width="36" height="14" rx="3" fill="var(--tie2)"/>
+      <text x="110" y="380" text-anchor="middle" font-size="14" fill="var(--tie)" font-weight="bold">받침철물(잭베이스)</text>
+      <text x="135" y="268" font-size="13" fill="var(--tie2)" font-weight="bold">← 조절너트</text>
+      <text x="122" y="200" font-size="13" fill="var(--muted)">← 나사봉</text>
+      <text x="165" y="353" font-size="13" fill="var(--muted)">← 바닥판</text>
+      <text x="60" y="330" font-size="12" fill="var(--muted)">(셋이 한 몸 = 일체형)</text>
+      <!-- 수직재 파이프 -->
+      <rect x="220" y="60" width="30" height="200" fill="none" stroke="var(--post)" stroke-width="6"/>
+      <text x="235" y="285" text-anchor="middle" font-size="14" fill="var(--post)" font-weight="bold">수직재</text>
+      <text x="235" y="303" text-anchor="middle" font-size="13" fill="var(--muted)">(속 빈 파이프)</text>
+      <!-- 화살표 -->
+      <line x1="290" y1="200" x2="350" y2="200" stroke="var(--muted)" stroke-width="3"/>
+      <polygon points="350,200 338,193 338,207" fill="var(--muted)"/>
+      <text x="320" y="185" text-anchor="middle" font-size="14" fill="var(--ink)" font-weight="bold">조립</text>
+      <!-- ===== 오른쪽: 조립된 모습 ===== -->
+      <text x="490" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="var(--ink)">[꽂은 모습]</text>
+      <line x1="380" y1="355" x2="620" y2="355" stroke="var(--ink)" stroke-width="3"/>
+      <!-- 받침철물 -->
+      <rect x="430" y="345" width="100" height="10" fill="var(--tie)"/>
+      <rect x="474" y="185" width="12" height="160" fill="var(--tie)"/>
+      <!-- 파이프가 나사봉 위를 덮음: 파이프 아래끝 y=240 -->
+      <rect x="465" y="40" width="30" height="200" fill="none" stroke="var(--post)" stroke-width="6"/>
+      <!-- 조절너트: 파이프 아래끝 받침 -->
+      <rect x="462" y="242" width="36" height="14" rx="3" fill="var(--tie2)"/>
+      <!-- 겹침구간: 나사봉 위끝(185)~파이프 아래끝(240) -->
+      <rect x="465" y="185" width="30" height="55" fill="var(--brace)" opacity="0.4"/>
+      <!-- 치수 L -->
+      <line x1="560" y1="185" x2="560" y2="345" stroke="var(--muted)" stroke-width="1.5"/>
+      <polygon points="560,185 556,193 564,193" fill="var(--muted)"/>
+      <polygon points="560,345 556,337 564,337" fill="var(--muted)"/>
+      <text x="570" y="250" font-size="14" fill="var(--tie)" font-weight="bold">받침철물</text>
+      <text x="570" y="268" font-size="14" fill="var(--tie)" font-weight="bold">전체길이 L</text>
+      <!-- 치수 겹침 -->
+      <line x1="440" y1="185" x2="440" y2="240" stroke="var(--muted)" stroke-width="1.5"/>
+      <polygon points="440,185 436,193 444,193" fill="var(--muted)"/>
+      <polygon points="440,240 436,232 444,232" fill="var(--muted)"/>
+      <text x="430" y="200" text-anchor="end" font-size="14" fill="var(--brace)" font-weight="bold">겹침길이</text>
+      <text x="430" y="218" text-anchor="end" font-size="14" fill="var(--brace)" font-weight="bold">≥ L의 1/3</text>
+      <text x="505" y="252" font-size="13" fill="var(--tie2)" font-weight="bold">← 너트 돌려 높이조절</text>
+      <text x="380" y="390" font-size="14" fill="var(--ink)">초록 = 나사봉이 파이프 <tspan font-weight="bold">속에 들어가 있는</tspan> 구간. 이게 L의 1/3 이상!</text>
+    </svg>
+    <div class="legend">
+      <span><span class="sw" style="background:var(--tie)"></span>받침철물(나사봉)</span>
+      <span><span class="sw" style="background:var(--post)"></span>수직재 파이프</span>
+      <span><span class="sw" style="background:var(--brace)"></span>겹침(삽입) 구간 — 전체길이의 1/3 이상</span>
+    </div>
+  </div>
+
+  <div class="memo">
+    암기: <b>"3.5 넘으면, 2m마다, 두 방향 井자"</b> — 한 방향만 묶으면 안 묶인 쪽으로 넘어진다<br>
+    <b>"받침철물은 1/3은 꽂고 써라"</b> — 60cm짜리면 최소 20cm 삽입
+  </div>
+</div>
