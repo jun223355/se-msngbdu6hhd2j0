@@ -1,0 +1,316 @@
+<title>사다리식 통로 — 계단참·기울기·등받이울</title>
+<style>
+  :root {
+    --bg: #faf9f6; --card: #ffffff; --ink: #26251f; --muted: #7d7a70;
+    --line: #e2dfd7; --ladder: #3a5f8a; --key: #c2542a; --guard: #3f7a45; --slab: #d8d4c8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1c1b18; --card: #262420; --ink: #e8e6df; --muted: #9a968a;
+      --line: #3a3831; --ladder: #7fa8d4; --key: #e07a4e; --guard: #7fbf86; --slab: #4a4740; }
+  }
+  :root[data-theme="dark"] { --bg: #1c1b18; --card: #262420; --ink: #e8e6df; --muted: #9a968a;
+    --line: #3a3831; --ladder: #7fa8d4; --key: #e07a4e; --guard: #7fbf86; --slab: #4a4740; }
+  :root[data-theme="light"] { --bg: #faf9f6; --card: #ffffff; --ink: #26251f; --muted: #7d7a70;
+    --line: #e2dfd7; --ladder: #3a5f8a; --key: #c2542a; --guard: #3f7a45; --slab: #d8d4c8; }
+  body { background: var(--bg); color: var(--ink);
+    font-family: "Malgun Gothic", "맑은 고딕", "Apple SD Gothic Neo", sans-serif;
+    line-height: 1.6; margin: 0; padding: 28px 16px 60px; }
+  .wrap { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+  h1 { font-size: 1.35rem; margin: 0; text-wrap: balance; }
+  h1 .accent { color: var(--key); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 16px; overflow-x: auto; }
+  .card h2 { font-size: 1.02rem; margin: 0 0 4px; }
+  .card p.sub { margin: 0 0 12px; color: var(--muted); font-size: 0.88rem; }
+  svg { display: block; max-width: 100%; height: auto; }
+  .memo { text-align: center; font-size: 1.05rem; background: var(--card);
+    border: 1px dashed var(--line); border-radius: 8px; padding: 14px; }
+@media print{ body{background:#fff;} .card,.memo,.legend,svg{break-inside:avoid; page-break-inside:avoid;} }
+</style>
+
+<div class="wrap">
+  <h1>사다리식 통로 — <span class="accent">계단참 · 기울기 · 등받이울</span></h1>
+
+  <div class="card">
+    <h2>① 길이 10m 이상 → 5m 이내마다 계단참</h2>
+    <p class="sub">한 번에 10m를 타면 중간에 쉴 곳도, 떨어질 때 멈출 곳도 없다 → 5m마다 발 디딜 참(platform)을 끼운다</p>
+    <svg viewBox="0 0 640 430" role="img" aria-label="10m 사다리에 5m마다 계단참">
+      <!-- 바닥/상단 -->
+      <line x1="60" y1="400" x2="580" y2="400" stroke="var(--ink)" stroke-width="3"/>
+      <rect x="330" y="30" width="180" height="14" fill="var(--slab)" stroke="var(--muted)"/>
+      <text x="520" y="42" font-size="14" fill="var(--muted)">상부 바닥</text>
+      <!-- 아래쪽 사다리 (바닥~계단참) -->
+      <line x1="180" y1="400" x2="180" y2="220" stroke="var(--ladder)" stroke-width="6"/>
+      <line x1="215" y1="400" x2="215" y2="220" stroke="var(--ladder)" stroke-width="6"/>
+      <g stroke="var(--ladder)" stroke-width="4">
+        <line x1="180" y1="380" x2="215" y2="380"/><line x1="180" y1="350" x2="215" y2="350"/>
+        <line x1="180" y1="320" x2="215" y2="320"/><line x1="180" y1="290" x2="215" y2="290"/>
+        <line x1="180" y1="260" x2="215" y2="260"/><line x1="180" y1="235" x2="215" y2="235"/>
+      </g>
+      <!-- 계단참 -->
+      <rect x="160" y="210" width="200" height="14" fill="var(--key)"/>
+      <text x="370" y="223" font-size="15" fill="var(--key)" font-weight="bold">← 계단참 (발 디디고 쉬는 참)</text>
+      <!-- 위쪽 사다리 (계단참~상부, 옆으로 어긋나게) -->
+      <line x1="300" y1="210" x2="300" y2="44" stroke="var(--ladder)" stroke-width="6"/>
+      <line x1="335" y1="210" x2="335" y2="44" stroke="var(--ladder)" stroke-width="6"/>
+      <g stroke="var(--ladder)" stroke-width="4">
+        <line x1="300" y1="190" x2="335" y2="190"/><line x1="300" y1="160" x2="335" y2="160"/>
+        <line x1="300" y1="130" x2="335" y2="130"/><line x1="300" y1="100" x2="335" y2="100"/>
+        <line x1="300" y1="70" x2="335" y2="70"/>
+      </g>
+      <!-- 치수 -->
+      <line x1="120" y1="224" x2="120" y2="400" stroke="var(--muted)" stroke-width="1.5"/>
+      <polygon points="120,224 116,232 124,232" fill="var(--muted)"/>
+      <polygon points="120,400 116,392 124,392" fill="var(--muted)"/>
+      <text x="110" y="315" text-anchor="end" font-size="15" fill="var(--ink)" font-weight="bold">5m 이내</text>
+      <line x1="420" y1="44" x2="420" y2="210" stroke="var(--muted)" stroke-width="1.5"/>
+      <polygon points="420,44 416,52 424,52" fill="var(--muted)"/>
+      <polygon points="420,210 416,202 424,202" fill="var(--muted)"/>
+      <text x="430" y="130" font-size="15" fill="var(--ink)" font-weight="bold">5m 이내</text>
+      <line x1="560" y1="44" x2="560" y2="400" stroke="var(--muted)" stroke-width="1.5"/>
+      <polygon points="560,44 556,52 564,52" fill="var(--muted)"/>
+      <polygon points="560,400 556,392 564,392" fill="var(--muted)"/>
+      <text x="572" y="230" font-size="15" fill="var(--key)" font-weight="bold" writing-mode="tb">전체 10m 이상</text>
+    </svg>
+  </div>
+
+  <div class="card">
+    <h2>② 기울기 75° 이하 (고정식 90°) + 등받이울</h2>
+    <p class="sub">기대 놓는 사다리는 75°까지, 벽에 붙박은 고정식은 90°(수직) 허용 — 대신 7m 넘으면 2.5m부터 등받이울</p>
+    <svg viewBox="0 0 640 420" role="img" aria-label="기울기 75도와 고정식 90도 등받이울">
+      <!-- 바닥 -->
+      <line x1="40" y1="380" x2="600" y2="380" stroke="var(--ink)" stroke-width="3"/>
+      <!-- 왼쪽: 75도 사다리 -->
+      <text x="150" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="var(--ink)">[일반(기대는) 사다리]</text>
+      <line x1="90" y1="380" x2="175" y2="60" stroke="var(--ladder)" stroke-width="7"/>
+      <line x1="120" y1="380" x2="205" y2="60" stroke="var(--ladder)" stroke-width="7"/>
+      <g stroke="var(--ladder)" stroke-width="4">
+        <line x1="103" y1="330" x2="133" y2="330"/><line x1="117" y1="280" x2="147" y2="280"/>
+        <line x1="130" y1="230" x2="160" y2="230"/><line x1="143" y1="180" x2="173" y2="180"/>
+        <line x1="156" y1="130" x2="186" y2="130"/><line x1="169" y1="85" x2="199" y2="85"/>
+      </g>
+      <!-- 각도 표시 -->
+      <path d="M 170 380 A 80 80 0 0 0 111 302" fill="none" stroke="var(--key)" stroke-width="3"/>
+      <text x="185" y="330" font-size="17" fill="var(--key)" font-weight="bold">75° 이하</text>
+      <!-- 오른쪽: 90도 고정식 + 등받이울 -->
+      <text x="460" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="var(--ink)">[고정식(벽에 붙박이)]</text>
+      <rect x="530" y="40" width="26" height="340" fill="var(--slab)" stroke="var(--muted)"/>
+      <text x="562" y="200" font-size="14" fill="var(--muted)" writing-mode="tb">벽·구조물</text>
+      <line x1="470" y1="380" x2="470" y2="50" stroke="var(--ladder)" stroke-width="7"/>
+      <line x1="505" y1="380" x2="505" y2="50" stroke="var(--ladder)" stroke-width="7"/>
+      <g stroke="var(--ladder)" stroke-width="4">
+        <line x1="470" y1="350" x2="505" y2="350"/><line x1="470" y1="315" x2="505" y2="315"/>
+        <line x1="470" y1="280" x2="505" y2="280"/><line x1="470" y1="245" x2="505" y2="245"/>
+        <line x1="470" y1="210" x2="505" y2="210"/><line x1="470" y1="175" x2="505" y2="175"/>
+        <line x1="470" y1="140" x2="505" y2="140"/><line x1="470" y1="105" x2="505" y2="105"/>
+        <line x1="470" y1="70" x2="505" y2="70"/>
+      </g>
+      <text x="440" y="368" text-anchor="end" font-size="17" fill="var(--key)" font-weight="bold">90° 이하</text>
+      <!-- 등받이울: 2.5m 지점부터 위로 반원 고리들 -->
+      <g stroke="var(--guard)" stroke-width="4" fill="none">
+        <path d="M 470 290 C 425 290 425 250 470 250"/>
+        <path d="M 470 250 C 425 250 425 210 470 210"/>
+        <path d="M 470 210 C 425 210 425 170 470 170"/>
+        <path d="M 470 170 C 425 170 425 130 470 130"/>
+        <path d="M 470 130 C 425 130 425 90 470 90"/>
+      </g>
+      <text x="418" y="180" text-anchor="end" font-size="15" fill="var(--guard)" font-weight="bold">등받이울</text>
+      <text x="418" y="198" text-anchor="end" font-size="13" fill="var(--guard)">(뒤로 넘어가도 감싸줌)</text>
+      <!-- 치수: 2.5m -->
+      <line x1="380" y1="290" x2="380" y2="380" stroke="var(--muted)" stroke-width="1.5"/>
+      <polygon points="380,290 376,298 384,298" fill="var(--muted)"/>
+      <polygon points="380,380 376,372 384,372" fill="var(--muted)"/>
+      <text x="372" y="340" text-anchor="end" font-size="14" fill="var(--ink)" font-weight="bold">바닥에서 2.5m</text>
+      <!-- 치수: 7m -->
+      <line x1="610" y1="50" x2="610" y2="380" stroke="var(--muted)" stroke-width="1.5"/>
+      <polygon points="610,50 606,58 614,58" fill="var(--muted)"/>
+      <polygon points="610,380 606,372 614,372" fill="var(--muted)"/>
+      <text x="622" y="215" font-size="14" fill="var(--key)" font-weight="bold" writing-mode="tb">높이 7m 이상이면</text>
+    </svg>
+  </div>
+
+  <div class="card">
+    <h2>③ 비계다리(가설통로) — 경사 30°·미끄럼막이·8m에 7m 계단참</h2>
+    <p class="sub">사다리(수직에 가깝게 타는 것)와 달리 비계다리는 걸어 올라가는 경사로 — 그래서 기준이 다름</p>
+    <svg viewBox="0 0 660 400" role="img" aria-label="비계다리 경사 30도, 미끄럼막이, 8m 이상이면 7m 이내 계단참">
+      <!-- ===== 왼쪽: 경사·미끄럼막이 ===== -->
+      <text x="160" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="var(--ink)">[경사 기준]</text>
+      <line x1="30" y1="350" x2="320" y2="350" stroke="var(--ink)" stroke-width="3"/>
+      <!-- 경사로 판 (약 30도) -->
+      <polygon points="50,350 290,212 290,228 50,366" fill="var(--slab)" stroke="var(--ladder)" stroke-width="3"/>
+      <!-- 미끄럼막이 (발판 위 가로 턱) -->
+      <g stroke="var(--key)" stroke-width="4">
+        <line x1="90" y1="327" x2="98" y2="341"/>
+        <line x1="130" y1="304" x2="138" y2="318"/>
+        <line x1="170" y1="281" x2="178" y2="295"/>
+        <line x1="210" y1="258" x2="218" y2="272"/>
+        <line x1="250" y1="235" x2="258" y2="249"/>
+      </g>
+      <text x="150" y="250" font-size="15" fill="var(--key)" font-weight="bold">미끄럼막이</text>
+      <text x="150" y="268" font-size="13" fill="var(--key)">(경사 15° 넘으면 필수)</text>
+      <!-- 난간 -->
+      <g stroke="var(--guard)" stroke-width="4">
+        <line x1="70" y1="339" x2="70" y2="299"/>
+        <line x1="150" y1="293" x2="150" y2="253"/>
+        <line x1="230" y1="247" x2="230" y2="207"/>
+        <line x1="70" y1="299" x2="230" y2="207"/>
+      </g>
+      <text x="60" y="285" font-size="14" fill="var(--guard)" font-weight="bold">안전난간</text>
+      <!-- 각도 -->
+      <path d="M 130 350 A 80 80 0 0 0 119 310" fill="none" stroke="var(--key)" stroke-width="3"/>
+      <text x="142" y="335" font-size="17" fill="var(--key)" font-weight="bold">30° 이하</text>
+      <!-- ===== 오른쪽: 8m/7m 계단참 ===== -->
+      <text x="490" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="var(--ink)">[높이 8m 이상 비계다리]</text>
+      <line x1="380" y1="350" x2="640" y2="350" stroke="var(--ink)" stroke-width="3"/>
+      <!-- 아래 경사로 -->
+      <polygon points="395,350 560,235 560,249 395,364" fill="var(--slab)" stroke="var(--ladder)" stroke-width="3"/>
+      <!-- 계단참 -->
+      <rect x="545" y="228" width="90" height="13" fill="var(--key)"/>
+      <text x="540" y="222" text-anchor="end" font-size="15" fill="var(--key)" font-weight="bold">계단참 ←</text>
+      <!-- 위 경사로 (반대 방향으로 꺾임) -->
+      <polygon points="560,228 415,120 415,134 560,242" fill="var(--slab)" stroke="var(--ladder)" stroke-width="3"/>
+      <rect x="390" y="113" width="60" height="13" fill="var(--slab)" stroke="var(--muted)"/>
+      <text x="385" y="107" font-size="13" fill="var(--muted)">상부</text>
+      <!-- 치수: 7m -->
+      <line x1="612" y1="241" x2="612" y2="350" stroke="var(--muted)" stroke-width="1.5"/>
+      <polygon points="612,241 608,249 616,249" fill="var(--muted)"/>
+      <polygon points="612,350 608,342 616,342" fill="var(--muted)"/>
+      <text x="620" y="300" font-size="15" fill="var(--ink)" font-weight="bold" writing-mode="tb">7m 이내</text>
+      <text x="380" y="385" font-size="14" fill="var(--muted)">지그재그로 꺾어 올라가며 7m 이내마다 참을 둔다</text>
+    </svg>
+  </div>
+
+  <div class="card">
+    <h2>④ 계단참 4형제 — 한눈 비교</h2>
+    <p class="sub">사다리=길이 / 비계다리=높이 / 수직갱=길이 / 계단=높이 — 기준부터 다름</p>
+    <svg viewBox="0 0 720 620" role="img" aria-label="계단참 4형제 치수선: 사다리 10-5, 비계다리 8-7, 수직갱 15-10, 계단 3-3 참1.2">
+      <!-- ============ 1. 사다리식 통로 (좌상) ============ -->
+      <text x="170" y="26" text-anchor="middle" font-size="16" font-weight="bold" fill="var(--ink)">[사다리식 통로] — 길이 기준</text>
+      <line x1="60" y1="290" x2="300" y2="290" stroke="var(--ink)" stroke-width="3"/>
+      <!-- 사다리 -->
+      <line x1="150" y1="50" x2="150" y2="290" stroke="var(--ladder)" stroke-width="5"/>
+      <line x1="175" y1="50" x2="175" y2="290" stroke="var(--ladder)" stroke-width="5"/>
+      <g stroke="var(--ladder)" stroke-width="3">
+        <line x1="150" y1="70" x2="175" y2="70"/><line x1="150" y1="100" x2="175" y2="100"/>
+        <line x1="150" y1="130" x2="175" y2="130"/><line x1="150" y1="200" x2="175" y2="200"/>
+        <line x1="150" y1="230" x2="175" y2="230"/><line x1="150" y1="260" x2="175" y2="260"/>
+      </g>
+      <!-- 계단참 -->
+      <rect x="130" y="163" width="65" height="12" fill="var(--key)"/>
+      <text x="202" y="174" font-size="13" fill="var(--key)" font-weight="bold">계단참</text>
+      <!-- 치수: 아래 구간 5m -->
+      <line x1="110" y1="175" x2="110" y2="290" stroke="var(--key)" stroke-width="1.5"/>
+      <polygon points="110,175 106,183 114,183" fill="var(--key)"/>
+      <polygon points="110,290 106,282 114,282" fill="var(--key)"/>
+      <text x="102" y="238" text-anchor="end" font-size="13" fill="var(--key)" font-weight="bold">5m 이내</text>
+      <!-- 치수: 위 구간 5m -->
+      <line x1="110" y1="50" x2="110" y2="163" stroke="var(--key)" stroke-width="1.5"/>
+      <polygon points="110,50 106,58 114,58" fill="var(--key)"/>
+      <polygon points="110,163 106,155 114,155" fill="var(--key)"/>
+      <text x="102" y="112" text-anchor="end" font-size="13" fill="var(--key)" font-weight="bold">5m 이내</text>
+      <!-- 치수: 전체 10m -->
+      <line x1="250" y1="50" x2="250" y2="290" stroke="var(--muted)" stroke-width="1.5"/>
+      <polygon points="250,50 246,58 254,58" fill="var(--muted)"/>
+      <polygon points="250,290 246,282 254,282" fill="var(--muted)"/>
+      <text x="260" y="165" font-size="13" fill="var(--ink)" font-weight="bold">전체 길이</text>
+      <text x="260" y="183" font-size="13" fill="var(--ink)" font-weight="bold">10m 이상</text>
+
+      <!-- ============ 2. 비계다리 (우상) ============ -->
+      <text x="540" y="26" text-anchor="middle" font-size="16" font-weight="bold" fill="var(--ink)">[비계다리] — 높이 기준</text>
+      <line x1="400" y1="290" x2="710" y2="290" stroke="var(--ink)" stroke-width="3"/>
+      <!-- 아래 경사로 -->
+      <polygon points="415,290 555,175 555,187 415,302" fill="var(--slab)" stroke="var(--ladder)" stroke-width="2"/>
+      <!-- 계단참 -->
+      <rect x="543" y="168" width="70" height="12" fill="var(--key)"/>
+      <text x="580" y="160" text-anchor="middle" font-size="13" fill="var(--key)" font-weight="bold">계단참</text>
+      <!-- 위 경사로 (반대로 꺾임) -->
+      <polygon points="613,168 505,80 505,92 613,180" fill="var(--slab)" stroke="var(--ladder)" stroke-width="2"/>
+      <rect x="480" y="74" width="28" height="10" fill="var(--slab)" stroke="var(--muted)"/>
+      <!-- 치수: 아래 구간 높이 7m (수직) -->
+      <line x1="640" y1="174" x2="640" y2="290" stroke="var(--key)" stroke-width="1.5"/>
+      <polygon points="640,174 636,182 644,182" fill="var(--key)"/>
+      <polygon points="640,290 636,282 644,282" fill="var(--key)"/>
+      <line x1="613" y1="174" x2="646" y2="174" stroke="var(--key)" stroke-width="1" stroke-dasharray="3 2"/>
+      <text x="648" y="238" font-size="13" fill="var(--key)" font-weight="bold">7m 이내</text>
+      <text x="648" y="254" font-size="12" fill="var(--key)">(수직 높이)</text>
+      <!-- 치수: 전체 높이 8m -->
+      <line x1="695" y1="79" x2="695" y2="290" stroke="var(--muted)" stroke-width="1.5"/>
+      <polygon points="695,79 691,87 699,87" fill="var(--muted)"/>
+      <polygon points="695,290 691,282 699,282" fill="var(--muted)"/>
+      <line x1="508" y1="79" x2="700" y2="79" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 2"/>
+      <text x="703" y="150" font-size="13" fill="var(--ink)" font-weight="bold" writing-mode="tb">전체 높이 8m 이상</text>
+
+      <!-- ============ 3. 수직갱 (좌하) ============ -->
+      <text x="170" y="345" text-anchor="middle" font-size="16" font-weight="bold" fill="var(--ink)">[수직갱 통로] — 길이 기준</text>
+      <line x1="60" y1="370" x2="300" y2="370" stroke="var(--ink)" stroke-width="3"/>
+      <text x="64" y="362" font-size="12" fill="var(--muted)">지표</text>
+      <!-- 갱 벽 -->
+      <line x1="130" y1="370" x2="130" y2="600" stroke="var(--muted)" stroke-width="4"/>
+      <line x1="215" y1="370" x2="215" y2="600" stroke="var(--muted)" stroke-width="4"/>
+      <!-- 사다리 -->
+      <line x1="155" y1="370" x2="155" y2="595" stroke="var(--ladder)" stroke-width="4"/>
+      <line x1="178" y1="370" x2="178" y2="595" stroke="var(--ladder)" stroke-width="4"/>
+      <g stroke="var(--ladder)" stroke-width="2.5">
+        <line x1="155" y1="390" x2="178" y2="390"/><line x1="155" y1="415" x2="178" y2="415"/>
+        <line x1="155" y1="440" x2="178" y2="440"/><line x1="155" y1="465" x2="178" y2="465"/>
+        <line x1="155" y1="520" x2="178" y2="520"/><line x1="155" y1="545" x2="178" y2="545"/>
+        <line x1="155" y1="570" x2="178" y2="570"/>
+      </g>
+      <!-- 계단참 -->
+      <rect x="136" y="488" width="74" height="12" fill="var(--key)"/>
+      <text x="222" y="499" font-size="13" fill="var(--key)" font-weight="bold">계단참</text>
+      <!-- 치수: 위에서 참까지 10m -->
+      <line x1="110" y1="370" x2="110" y2="488" stroke="var(--key)" stroke-width="1.5"/>
+      <polygon points="110,370 106,378 114,378" fill="var(--key)"/>
+      <polygon points="110,488 106,480 114,480" fill="var(--key)"/>
+      <text x="102" y="432" text-anchor="end" font-size="13" fill="var(--key)" font-weight="bold">10m 이내</text>
+      <!-- 치수: 전체 15m -->
+      <line x1="260" y1="370" x2="260" y2="600" stroke="var(--muted)" stroke-width="1.5"/>
+      <polygon points="260,370 256,378 264,378" fill="var(--muted)"/>
+      <polygon points="260,600 256,592 264,592" fill="var(--muted)"/>
+      <text x="270" y="478" font-size="13" fill="var(--ink)" font-weight="bold">전체 길이</text>
+      <text x="270" y="496" font-size="13" fill="var(--ink)" font-weight="bold">15m 이상</text>
+
+      <!-- ============ 4. 계단 (우하) ============ -->
+      <text x="540" y="345" text-anchor="middle" font-size="16" font-weight="bold" fill="var(--ink)">[계단] — 높이 기준 + 참 크기</text>
+      <line x1="400" y1="600" x2="710" y2="600" stroke="var(--ink)" stroke-width="3"/>
+      <!-- 아래 계단 4단 -->
+      <g fill="var(--slab)" stroke="var(--ladder)" stroke-width="2">
+        <rect x="415" y="575" width="26" height="25"/>
+        <rect x="441" y="550" width="26" height="50"/>
+        <rect x="467" y="525" width="26" height="75"/>
+        <rect x="493" y="500" width="26" height="100"/>
+      </g>
+      <!-- 계단참 (넓은 판) -->
+      <rect x="519" y="488" width="80" height="12" fill="var(--key)"/>
+      <!-- 위 계단 계속 -->
+      <g fill="var(--slab)" stroke="var(--ladder)" stroke-width="2">
+        <rect x="599" y="463" width="26" height="25" transform="translate(0 0)"/>
+        <rect x="625" y="438" width="26" height="50"/>
+        <rect x="651" y="413" width="26" height="75"/>
+      </g>
+      <!-- 치수: 아래 구간 높이 3m -->
+      <line x1="415" y1="488" x2="415" y2="600" stroke="var(--key)" stroke-width="1.5" transform="translate(-15 0)"/>
+      <polygon points="400,488 396,496 404,496" fill="var(--key)"/>
+      <polygon points="400,600 396,592 404,592" fill="var(--key)"/>
+      <line x1="404" y1="488" x2="521" y2="488" stroke="var(--key)" stroke-width="1" stroke-dasharray="3 2"/>
+      <text x="394" y="540" text-anchor="end" font-size="13" fill="var(--key)" font-weight="bold">높이</text>
+      <text x="394" y="556" text-anchor="end" font-size="13" fill="var(--key)" font-weight="bold">3m 이내</text>
+      <!-- 치수: 참 길이 1.2m (진행방향, 가로) -->
+      <line x1="519" y1="472" x2="599" y2="472" stroke="var(--key)" stroke-width="1.5"/>
+      <polygon points="519,472 527,468 527,476" fill="var(--key)"/>
+      <polygon points="599,472 591,468 591,476" fill="var(--key)"/>
+      <text x="559" y="462" text-anchor="middle" font-size="13" fill="var(--key)" font-weight="bold">참: 진행방향 1.2m 이상</text>
+      <!-- 조건 -->
+      <line x1="695" y1="413" x2="695" y2="600" stroke="var(--muted)" stroke-width="1.5"/>
+      <polygon points="695,413 691,421 699,421" fill="var(--muted)"/>
+      <polygon points="695,600 691,592 699,592" fill="var(--muted)"/>
+      <text x="703" y="470" font-size="13" fill="var(--ink)" font-weight="bold" writing-mode="tb">전체 높이 3m 초과 시</text>
+    </svg>
+  </div>
+
+  <div class="memo">
+    암기: <b>"10에 5 (10m 넘으면 5m마다 참)"</b> / <b>"75 기대고, 90 붙박고, 7 넘으면 2.5부터 등받이"</b><br>
+    비계다리: <b>"30 넘지마, 15 넘으면 미끄럼막이, 8에 7"</b><br>
+    계단참 4형제: <b>사10-5 · 비8-7 · 수15-10 · 계3-3(참 1.2m)</b> — 사다리·수직갱=길이, 비계다리·계단=높이
+  </div>
+</div>

@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>작업형 기출 복기 2026-10-24</title>
+<style>
+  :root { --red:#c0392b; --blue:#1f6feb; --yellow:#fff3cd; --yline:#e0a800; --gray:#555; }
+  * { box-sizing: border-box; }
+  body { font-family: "맑은 고딕","Malgun Gothic",sans-serif; line-height:1.6; color:#1a1a1a;
+         padding:18px; max-width:980px; margin:0 auto; font-size:15px; background:#fff; }
+  h1 { font-size:1.5em; border-bottom:3px solid #1a1a1a; padding-bottom:8px; margin:0 0 6px; }
+  h2 { font-size:1.2em; background:#1a1a1a; color:#fff; padding:6px 12px; border-radius:4px; margin:28px 0 10px; }
+  .meta { background:#f6f8fa; border:1px solid #d0d7de; border-radius:6px; padding:10px 14px; font-size:0.9em; color:var(--gray); margin-bottom:10px; }
+  .meta b { color:#1a1a1a; }
+  .memo { background:#fafafa; border:1px dashed #999; border-radius:6px; padding:8px 14px; margin:10px 0 18px; font-size:0.9em; }
+  .memo .ln { border-bottom:1px solid #ccc; min-height:1.8em; }
+  table { border-collapse:collapse; width:100%; margin:10px 0 18px; font-size:0.92em; }
+  th, td { border:1px solid #c8c8c8; padding:7px 9px; text-align:left; vertical-align:top; }
+  th { background:#eceff2; font-weight:700; }
+  td:first-child { white-space:nowrap; }
+  tr.ans td:first-child { color:var(--blue); font-weight:700; }
+  tr.ans td:nth-child(2) { background:#e6ffed; }
+  body.noans tr.ans td:nth-child(2) { color:transparent; background:#ddd; }
+  body.noans tr.ans td:nth-child(2) * { color:transparent; }
+  body.noans tr.ans td:nth-child(2):hover, body.noans tr.ans td:nth-child(2):hover * { color:#1a1a1a; background:#e6ffed; }
+  ul { margin:8px 0; padding-left:20px; } li { margin-bottom:5px; }
+  .toolbar { margin:8px 0 14px; position:sticky; top:0; background:#fff; padding:6px 0; z-index:5; }
+  .toolbar button { font-size:14px; padding:6px 14px; border:1px solid #3b4a8c; background:#3b4a8c; color:#fff; cursor:pointer; border-radius:4px; }
+  .footer { margin-top:28px; padding-top:10px; border-top:1px solid #ccc; font-size:0.82em; color:var(--gray); }
+  code { background:#f0f0f0; padding:1px 5px; border-radius:3px; font-size:0.9em; }
+  .tw { overflow-x:auto; }
+  @media (max-width:640px) { body { padding:12px; font-size:14px; } table { font-size:0.85em; } th, td { padding:5px 6px; } td:first-child { white-space:normal; } }
+  @media print {
+    body { padding:0; font-size:11pt; max-width:none; }
+    .toolbar { display:none; }
+    body.noans tr.ans td:nth-child(2), body.noans tr.ans td:nth-child(2) * { color:#1a1a1a !important; background:#e6ffed !important; }
+    h2, th, tr.ans td, .meta { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    h2 { page-break-after:avoid; } tr { page-break-inside:avoid; }
+    .q { page-break-inside:avoid; }
+  }
+</style>
+<script>
+function hideAns(){document.body.classList.toggle('noans');var b=document.getElementById('bt');b.textContent=document.body.classList.contains('noans')?'정답 보이기':'정답 가리기';}
+</script>
+</head><body>
+<h1>작업형 기출 복기 — 2026-10-24 시험분</h1>
+<div style="color:var(--gray);margin-bottom:10px">시험 당일 복기 · 판 2026-10-24</div>
+<div class="meta"><ul>
+<li>판: 2026-10-24 (작업형 시험 당일 복기)</li>
+<li>시험: 2026-10-24(토) 08:30 대구디지털시험센터 5층 3실 / 다음 = <b>필답형 2026-11-07(토) 09:00 영남공업고등학교</b></li>
+<li>문제·내가 쓴 답 = 시험 직후 사장님 기억 복기(문제 문장은 기억 기준이라 원문과 다를 수 있음)</li>
+<li>법령 근거 = 국가법령정보센터 현행 원문 조회(2026-10-24)</li>
+<li style="margin-left:18px;list-style:circle">「산업안전보건기준에 관한 규칙」(고용노동부령 제450호, 2026-03-02 시행)</li>
+<li style="margin-left:18px;list-style:circle">「산업안전보건법」 제114조</li>
+<li>예상 점수 = 문제당 5점(40점/8문제)으로 놓고 AI가 추정한 값. 공단 채점 기준은 공개되지 않으므로 참고만 할 것</li>
+<li>「확인 필요」 = 법령·자료로 확인하지 못한 내용. 지어내지 않고 그대로 표시함</li>
+</ul></div>
+<div class="toolbar"><button id="bt" onclick="hideAns()">정답 가리기</button> <span style="font-size:12px;color:#666">문제별 표의 정답·근거 칸을 가린다. 칸에 손가락(마우스)을 올리면 잠깐 보임. 인쇄 땐 항상 보임.</span></div>
+<h2>0. 한눈에</h2>
+<div class="tw"><table>
+<tr><th>번호</th><th>문제</th><th>판정</th><th>조문</th><th>예상 점수(추정)</th></tr>
+<tr><td>1</td><td>터널 라이닝 선정 방법</td><td>△ 3개 중 2개 맞음</td><td>해당 조문 없음</td><td>2～3</td></tr>
+<tr><td>2</td><td>말비계 명칭·기울기</td><td>○ 「이하」로 썼으면 만점</td><td>규칙 제67조</td><td>2.5～5</td></tr>
+<tr><td>3</td><td>시스템비계 준수사항</td><td>✕</td><td>규칙 제69조(제70조)</td><td>0</td></tr>
+<tr><td>4</td><td>유해물질 사업주 조치</td><td>△ 일부</td><td>법 제114조 / 규칙 제442조</td><td>1～3</td></tr>
+<tr><td>5</td><td>리프트 이탈 방지 3가지</td><td>△ 3개 중 2개 맞음</td><td>규칙 제151조</td><td>3</td></tr>
+<tr><td>6</td><td>불도저 용도·종류</td><td>△ 용도만 일부</td><td>해당 조문 없음</td><td>1～2.5</td></tr>
+<tr><td>7</td><td>D링</td><td>○</td><td>보호구 안전인증 고시(확인 필요)</td><td>4～5</td></tr>
+<tr><td>8</td><td>강관비계 발판</td><td>○ 대부분</td><td>규칙 제56조·제42조</td><td>3～4</td></tr>
+<tr><td>계</td><td></td><td></td><td></td><td><b>약 16.5～25.5점</b></td></tr>
+</table></div>
+<ul>
+<li>사장님 메모의 최저 예상 17～18점과 거의 같은 범위. 필답형 목표 50점(최소 42～43점)은 그대로 둠</li>
+</ul>
+<h2>0-1. 자료 적중표 — 오늘 8문제가 내 자료에 있었나</h2>
+<div class="tw"><table>
+<tr><th>번호</th><th>작업형 정리 자료</th><th>작업형 실제 기출(2024년 42문항)</th><th>필답형 15년치(626문항)</th></tr>
+<tr><td>1 라이닝</td><td>○ 영상정리</td><td>✕</td><td>✕ (라이닝 폼 이름만)</td></tr>
+<tr><td>2 말비계</td><td>○ 07·핵심알짜</td><td>○</td><td>△ 이름만 · 75° 이하는 사다리식 통로로 4번</td></tr>
+<tr><td>3 시스템비계</td><td>○ 1부 답안지</td><td>✕</td><td><b>○ 4번 출제(공부책 문 42)</b></td></tr>
+<tr><td>4 유해물질</td><td>○ 영상정리·08</td><td>○</td><td>✕</td></tr>
+<tr><td>5 리프트 이탈 방지</td><td>✕</td><td>✕</td><td>✕ (종류·작업수칙·점검사항만)</td></tr>
+<tr><td>6 불도저</td><td>○ 용도</td><td>○</td><td>○ 종류 2번</td></tr>
+<tr><td>7 D링</td><td>○ 영상정리·08</td><td>✕</td><td>△ 안전블록·추락방지대 이름만</td></tr>
+<tr><td>8 강관비계 발판</td><td>○</td><td>○</td><td>○ 작업발판 5번 이상(공부책 문 46)</td></tr>
+<tr><td>계</td><td>8 중 7 (88%)</td><td>8 중 4 (50%)</td><td>같은 물음 8 중 3 (38%)</td></tr>
+</table></div>
+<ul>
+<li>작업형 과년도는 이 방에 2024년 1년치만 있음. 10년치 기준 비율은 자료가 없어 내지 못함</li>
+<li>원본 책 <code>건설안전기사 실기 예상문제집.pdf</code>(14쪽)는 사진 PDF라 글자 검색을 하지 못함</li>
+</ul>
+<h2>1. 터널 라이닝 선정 방법</h2>
+<div class="tw"><table>
+<tr><th>칸</th><th>내용</th></tr>
+<tr><td>문제</td><td>터널 콘크리트 라이닝 선정(검토) 시 고려사항</td></tr>
+<tr><td>내가 쓴 답</td><td>굴착공법 / 암반 형상 및 지질 상태 / 지하수 및 마감재 선정</td></tr>
+<tr class="ans"><td>정답(자료)</td><td>① 지질·암질 상태 ② 단면 형상 ③ 굴착공법 ④ 라이닝 작업능률</td></tr>
+<tr class="ans"><td>근거</td><td>해당 조문 없음 · 작업형 영상정리(파이팅공TV 자막) 「콘크리트 라이닝 검토」 줄 · 원래 출처(터널공사 표준안전 작업지침 등)는 <b>확인 필요</b></td></tr>
+<tr><td>판정</td><td>△ 굴착공법 ○ / 암반 형상 및 지질 상태 ○(지질·암질, 단면 형상 둘을 한 줄에 섞어 씀) / 지하수 및 마감재 ✕</td></tr>
+<tr><td>틀린 이유</td><td>「단면 형상」과 「지질·암질」을 따로 써야 할 것을 한 줄로 합쳤고, 「작업능률」 대신 자료에 없는 「지하수·마감재」를 씀</td></tr>
+<tr><td>예상 점수</td><td>2～3점 (추정)</td></tr>
+</table></div>
+<ul>
+<li>같이 외울 것: 콘크리트 라이닝 목적 = 터널 단면 변형 방지 / 단면 강도 확보 / 내부 시설물 설치 용이 (핵심알짜)</li>
+</ul>
+<div class="memo">
+<b>기술사 확장 메모(원인·대책·법 기준)</b>
+<div class="ln">원인:</div>
+<div class="ln">대책:</div>
+<div class="ln">법 기준:</div>
+</div>
+<h2>2. 말비계 — 명칭·기울기</h2>
+<div class="tw"><table>
+<tr><th>칸</th><th>내용</th></tr>
+<tr><td>문제</td><td>(영상: 천장 미장, A형 사다리 모양) 가. 명칭 / 나. 수평재·수직재 연결 각도</td></tr>
+<tr><td>내가 쓴 답</td><td>가. 말비계 / 나. 75도 (이하·이상 중 무엇을 썼는지 불확실)</td></tr>
+<tr class="ans"><td>정답</td><td>가. <b>말비계</b> / 나. 지주부재와 수평면의 기울기 <b>75° 이하</b></td></tr>
+<tr class="ans"><td>근거(원문)</td><td>규칙 제67조 2호 「지주부재와 수평면의 기울기를 75도 이하로 하고, 지주부재와 지주부재 사이를 고정시키는 보조부재를 설치할 것」</td></tr>
+<tr><td>판정</td><td>가 ○ / 나 「이하」로 썼으면 ○, 「이상」이나 숫자만이면 감점</td></tr>
+<tr><td>틀린 이유</td><td>숫자는 단위와 「이하」까지 써야 완성</td></tr>
+<tr><td>예상 점수</td><td>2.5～5점 (추정)</td></tr>
+</table></div>
+<ul>
+<li>제67조 나머지 2개(같이 나오면 씀): 1호 지주부재 하단 미끄럼 방지장치, 양측 끝부분에 올라서서 작업 금지 / 3호 말비계 높이 <b>2m 초과</b> 시 작업발판 폭 <b>40cm 이상</b></li>
+<li>섞이는 숫자: 사다리식 통로 기울기도 <b>75° 이하</b>(제24조, 고정식은 90° 이하) — 같은 숫자, 다른 대상</li>
+</ul>
+<div class="memo">
+<b>기술사 확장 메모(원인·대책·법 기준)</b>
+<div class="ln">원인:</div>
+<div class="ln">대책:</div>
+<div class="ln">법 기준:</div>
+</div>
+<h2>3. 시스템비계 설치 시 사업주 준수사항</h2>
+<div class="tw"><table>
+<tr><th>칸</th><th>내용</th></tr>
+<tr><td>문제</td><td>(영상: 사람 없이 비계 구조만) 시스템비계 설치 시 사업주 준수사항</td></tr>
+<tr><td>내가 쓴 답</td><td>작업 선임자 선정 / 작업 지시·순서도 작성 / 개인 안전용품 및 안전교육 실시</td></tr>
+<tr class="ans"><td>정답(1순위, 구조)</td><td>규칙 제69조 — ① 수직재·수평재·가새재를 견고하게 연결하는 구조가 되도록 할 것 ② 비계 밑단의 수직재와 받침철물은 밀착되도록 설치하고, 연결부의 겹침길이는 받침철물 전체길이의 <b>3분의 1 이상</b> ③ 수평재는 수직재와 <b>직각</b>으로 설치, 체결 후 흔들림 없도록 견고하게 ④ 수직재와 수직재의 연결철물은 이탈되지 않도록 견고한 구조 ⑤ 벽 연결재의 설치간격은 <b>제조사가 정한 기준</b>에 따라 설치</td></tr>
+<tr class="ans"><td>정답(2순위, 조립 작업)</td><td>규칙 제70조 — ① 비계 기둥 밑둥에 밑받침 철물 사용, 고저차가 있으면 조절형 밑받침 철물로 수평·수직 유지 ② 경사진 바닥은 <b>피벗형 받침 철물 또는 쐐기</b>로 수평 유지 ③ 가공전로 근접 시 이설하거나 <b>절연용 방호구</b> 설치 ④ 비계 내 이동은 지정된 통로 이용 ⑤ 같은 수직면상 위·아래 동시 작업 금지 ⑥ 작업발판에 제조사가 정한 최대적재하중 초과 금지, 표지판 부착</td></tr>
+<tr><td>판정</td><td>✕ — 쓴 답은 제69조·제70조 어디에도 없음</td></tr>
+<tr><td>틀린 이유</td><td>「비계 구조를 보여 주는 영상 + 준수사항」인데 사람·관리 쪽(선임·교육)으로 답함. 영상에 구조만 나오면 <b>구조 기준(제69조)</b>으로 답할 것</td></tr>
+<tr><td>예상 점수</td><td>0점 (추정)</td></tr>
+</table></div>
+<ul>
+<li>★필답형에서 <b>4번 출제</b>된 주제(21-2회01 · 14-1회06 · 14-2회07 · 11-4회03), 공부책 <b>문 42</b> 그대로</li>
+<li>섞이는 쌍: 「설치·구조」= 제69조 / 「조립 작업 시」= 제70조 / 「달비계 또는 5m 이상 비계 조립·해체·변경 시」= 제57조(관리감독자 지휘·시기·범위·절차 주지 — 사장님이 쓴 답이 이쪽에 가까움)</li>
+</ul>
+<div class="memo">
+<b>기술사 확장 메모(원인·대책·법 기준)</b>
+<div class="ln">원인:</div>
+<div class="ln">대책:</div>
+<div class="ln">법 기준:</div>
+</div>
+<h2>4. 공사장 유해물질 — 사업주가 해야 할 사항</h2>
+<div class="tw"><table>
+<tr><th>칸</th><th>내용</th></tr>
+<tr><td>문제</td><td>공사장 유해물질 관련 사업주가 해야 할 사항</td></tr>
+<tr><td>내가 쓴 답</td><td>MSDS 및 유해 경고표지판 설치 / 유해물질 리스트 비치 / 응급조치 및 응급연락처 게시</td></tr>
+<tr class="ans"><td>정답 갈래 A (물질안전보건자료)</td><td>산업안전보건법 제114조 — ① 물질안전보건자료를 취급 근로자가 쉽게 볼 수 있는 장소에 <b>게시하거나 갖추어 둘 것</b> ② 작업공정별로 물질안전보건자료대상물질의 <b>관리 요령을 게시</b> ③ 취급 근로자에게 <b>교육</b> 등 적절한 조치</td></tr>
+<tr class="ans"><td>정답 갈래 B (게시사항)</td><td>규칙 제442조 — 관리대상 유해물질 취급 작업장의 보기 쉬운 장소에 ① 명칭 ② 인체에 미치는 영향 ③ 취급상 주의사항 ④ 착용하여야 할 보호구 ⑤ 응급조치와 긴급 방재 요령 게시</td></tr>
+<tr><td>판정</td><td>△ MSDS 게시 = 갈래 A ①과 맞음 / 리스트 비치 = 「갖추어 둘 것」과 비슷 / 응급조치 게시 = 갈래 B ⑤ 일부</td></tr>
+<tr><td>틀린 이유</td><td>문제가 어느 갈래를 물었는지 정하지 않고 섞어 씀. 「게시하여야 할 사항」이면 B 5가지, 「사업주 조치」면 A 3가지</td></tr>
+<tr><td>예상 점수</td><td>1～3점 (추정, <b>문제 의도 확인 필요</b>)</td></tr>
+</table></div>
+<ul>
+<li>섞이는 쌍: 게시사항(제442조 5가지) ↔ 물질안전보건자료 작성 항목 — 묻는 방향이 다름(08 보강표 경고)</li>
+</ul>
+<div class="memo">
+<b>기술사 확장 메모(원인·대책·법 기준)</b>
+<div class="ln">원인:</div>
+<div class="ln">대책:</div>
+<div class="ln">법 기준:</div>
+</div>
+<h2>5. 리프트 이탈 방지 기준 3가지</h2>
+<div class="tw"><table>
+<tr><th>칸</th><th>내용</th></tr>
+<tr><td>문제</td><td>리프트 이탈 방지 기준(장치) 3가지</td></tr>
+<tr><td>내가 쓴 답</td><td>권과방지장치 / 비상정지장치 / 자동 제어장치</td></tr>
+<tr class="ans"><td>정답</td><td>① <b>권과방지장치</b> ② <b>과부하방지장치</b> ③ <b>비상정지장치</b></td></tr>
+<tr class="ans"><td>근거(원문)</td><td>규칙 제151조(권과 방지 등) 「사업주는 리프트(자동차정비용 리프트는 제외한다)의 운반구 이탈 등의 위험을 방지하기 위하여 권과방지장치, 과부하방지장치, 비상정지장치 등을 설치하는 등 필요한 조치를 하여야 한다.」</td></tr>
+<tr><td>판정</td><td>△ 3개 중 2개 ○ (자동 제어장치 ✕ → 과부하방지장치)</td></tr>
+<tr><td>틀린 이유</td><td>양중기 방호장치 4개(과부하방지·권과방지·비상정지·제동)에서 하나를 못 떠올림</td></tr>
+<tr><td>예상 점수</td><td>3점 (추정)</td></tr>
+</table></div>
+<ul>
+<li>같은 관(리프트) 다른 조문: 제154조 순간풍속 <b>초당 35m 초과</b> 우려 시 건설용 리프트 받침 수 증가 등 붕괴 방지 / 제155조 운반구를 주행로 위에 달아 올린 상태로 정지 금지</li>
+<li>섞이는 숫자: 주행 크레인 이탈방지장치 = 순간풍속 <b>30m/s 초과</b>(공부책 문 96) ↔ 건설용 리프트 붕괴 방지 = <b>35m/s 초과</b></li>
+</ul>
+<div class="memo">
+<b>기술사 확장 메모(원인·대책·법 기준)</b>
+<div class="ln">원인:</div>
+<div class="ln">대책:</div>
+<div class="ln">법 기준:</div>
+</div>
+<h2>6. 불도저 — 용도와 종류</h2>
+<div class="tw"><table>
+<tr><th>칸</th><th>내용</th></tr>
+<tr><td>문제</td><td>불도저 — 용도 + 미는 장비(종류) 2가지 (문제 문장 기억 불확실)</td></tr>
+<tr><td>내가 쓴 답</td><td>용도: 토공·깎기·성토·정지·절토 / 종류: 불도저, 스크레이퍼</td></tr>
+<tr class="ans"><td>정답 — 용도</td><td>토사의 <b>운반 / 굴착 / 지면 고르기(정지)</b> (2024년 작업형 기출 3회 3부 03번 「불도저 명칭·용도」, 핵심알짜)</td></tr>
+<tr class="ans"><td>정답 — 종류</td><td><b>스트레이트 도저</b>(배토판이 진행 방향과 직각, 절토·정지) / <b>앵글 도저</b>(배토판을 좌우 20～30° 돌려 흙을 옆으로 보냄) / <b>틸트 도저</b>(배토판을 위아래로 기울여 단단한 땅·V형 배수로 굴착) 중 2개 (필답형 장부 2번 출제)</td></tr>
+<tr class="ans"><td>근거</td><td>해당 조문 없음(건설기계 교재 내용)</td></tr>
+<tr><td>판정</td><td>용도 △(정지·굴착 ○, 운반 빠짐) / 종류 ✕ — 단, 문제가 「불도저 말고 흙을 미는 다른 장비」였다면 정답이 달라지며 그 경우는 <b>확인 필요</b></td></tr>
+<tr><td>틀린 이유</td><td>「종류」를 다른 기계 이름으로 답함. 불도저 종류는 배토판(블레이드) 모양으로 나눔</td></tr>
+<tr><td>예상 점수</td><td>1～2.5점 (추정)</td></tr>
+</table></div>
+<div class="memo">
+<b>기술사 확장 메모(원인·대책·법 기준)</b>
+<div class="ln">원인:</div>
+<div class="ln">대책:</div>
+<div class="ln">법 기준:</div>
+</div>
+<h2>7. D링</h2>
+<div class="tw"><table>
+<tr><th>칸</th><th>내용</th></tr>
+<tr><td>문제</td><td>(영상: D링·추락방지대·안전블록) D링 명칭과 설명</td></tr>
+<tr><td>내가 쓴 답</td><td>D링 / 안전대 설비에 연결하는 연결고리</td></tr>
+<tr class="ans"><td>정답(자료)</td><td><b>D링</b> — 벨트(안전그네)에 달린 D자형 금속 고리, 모든 연결의 중심 고리(작업형 영상정리)</td></tr>
+<tr class="ans"><td>근거</td><td>보호구 안전인증 고시 별표(안전대) — 별표가 첨부 파일이라 원문 글자 <b>확인 필요</b></td></tr>
+<tr><td>판정</td><td>○</td></tr>
+<tr><td>틀린 이유</td><td>없음. 「벨트(안전그네)에 달린」을 붙이면 더 단단함</td></tr>
+<tr><td>예상 점수</td><td>4～5점 (추정)</td></tr>
+</table></div>
+<ul>
+<li>같이 나오는 이름: 안전대 구성 부품 = D링 · 추락방지대 · 안전블록(08 보강표) / 안전대 종류 = 벨트식 1종 U자걸이 · 2종 1개걸이 · 3종 공용, 안전그네식 4종 안전블록 · 5종 추락방지대(필답형 장부)</li>
+</ul>
+<div class="memo">
+<b>기술사 확장 메모(원인·대책·법 기준)</b>
+<div class="ln">원인:</div>
+<div class="ln">대책:</div>
+<div class="ln">법 기준:</div>
+</div>
+<h2>8. 강관비계 발판 — 이동 중 발판 탈락 추락</h2>
+<div class="tw"><table>
+<tr><th>칸</th><th>내용</th></tr>
+<tr><td>문제</td><td>(영상: 이동 중 발판 탈락, 시멘트와 함께 추락) 발판 기준 / 발판 설치 곤란 시 조치 / 맨 밑 빈칸(～결속)</td></tr>
+<tr><td>내가 쓴 답</td><td>발판 틈 3cm 이하·폭 40cm 이상 / 발판 곤란 시: 추락방지대, 안전블록 / 빈칸: 걸침고리</td></tr>
+<tr class="ans"><td>정답 — 발판</td><td>작업발판의 폭은 <b>40cm 이상</b>, 발판재료 간의 틈은 <b>3cm 이하</b> / 발판재료는 뒤집히거나 떨어지지 않도록 <b>둘 이상의 지지물에 연결하거나 고정</b> (규칙 제56조 2호·6호)</td></tr>
+<tr class="ans"><td>정답 — 발판 설치 곤란 시</td><td><b>추락방호망 설치</b>, 추락방호망 설치도 곤란하면 <b>근로자에게 안전대 착용</b> (규칙 제42조 2항)</td></tr>
+<tr class="ans"><td>정답 — 빈칸</td><td>걸침고리(작업형 영상정리 「작업발판 끝 갈고리 = 걸침고리, 수평재·보재를 지지물에 고정」) — 빈칸 문장 원문을 몰라 <b>확인 필요</b></td></tr>
+<tr><td>판정</td><td>발판 ○ / 곤란 시 △(추락방지대·안전블록은 안전대 종류라 「안전대 착용」 쪽 일부, 1순위 추락방호망 빠짐) / 빈칸 ○로 보임</td></tr>
+<tr><td>틀린 이유</td><td>「곤란 시」 순서 = 추락방호망 → 안 되면 안전대. 안전대 부품 이름보다 「안전대 착용」으로 쓸 것</td></tr>
+<tr><td>예상 점수</td><td>3～4점 (추정)</td></tr>
+</table></div>
+<ul>
+<li>위험요인 쓰는 법: 「작업발판 미고정으로 인한 발판 탈락·추락 위험」 / 대책: 「발판재료는 둘 이상의 지지물에 연결하거나 고정한다」</li>
+<li>섞이는 숫자: 선박·보트 건조 좁은 곳 폭 30cm 이상 / 걸침비계 틈 유지 곤란 시 5cm 이하(제56조 3호)</li>
+<li>필답형 공부책 <b>문 46</b>(작업발판 구조, 4번 출제)·<b>문 36</b>(추락방호망, 5번 출제)과 같은 조문</li>
+</ul>
+<div class="memo">
+<b>기술사 확장 메모(원인·대책·법 기준)</b>
+<div class="ln">원인:</div>
+<div class="ln">대책:</div>
+<div class="ln">법 기준:</div>
+</div>
+<h2>9. 필답형 11-07 대비 — 오늘 문제에서 이어지는 것</h2>
+<div class="tw"><table>
+<tr><th>오늘 문제</th><th>필답형에 나오는 모양</th><th>공부책</th><th>근거 조문</th><th>우선순위</th></tr>
+<tr><td>3 시스템비계</td><td>시스템비계로 비계 구성 시 준수사항 3～4가지(6～8점), <b>4번 출제</b></td><td>문 42</td><td>규칙 제69조</td><td>★1 — 오늘 0점, 필답형 단골</td></tr>
+<tr><td>8 강관비계 발판</td><td>작업발판 구조 괄호(40·3·30·5·둘), 4번 / 추락방호망 설치기준(10m·12%·3m), 5번</td><td>문 46 · 문 36</td><td>규칙 제56조 · 제42조</td><td>★2</td></tr>
+<tr><td>5 리프트</td><td>리프트 종류(건설용·산업용·자동차정비용·이삿짐운반용), 양중기 종류 / 오늘 나온 <b>제151조 방호장치 3가지는 필답형 미출제</b> → 새로 외움</td><td>문 12</td><td>규칙 제132조 · 제151조 · 제154조</td><td>★3</td></tr>
+<tr><td>2 말비계</td><td>75° 이하가 사다리식 통로 기울기로 4번 출제</td><td>문 31</td><td>규칙 제24조 · 제67조</td><td>4</td></tr>
+<tr><td>6 불도저</td><td>앵글도저·틸트도저 설명(6점), 불도저 종류 빈칸(2점)</td><td>(공부책 밖, 장부)</td><td>조문 없음</td><td>5</td></tr>
+<tr><td>4 유해물질</td><td>필답형 미출제 · 물질안전보건자료 게시·관리요령·교육(법 제114조), 게시사항 5가지(규칙 제442조)</td><td>없음</td><td>법 제114조 · 규칙 제442조</td><td>6</td></tr>
+</table></div>
+<h2>10. 확인 못 한 항목</h2>
+<div class="tw"><table>
+<tr><th>번호</th><th>항목</th><th>왜 못 했나</th></tr>
+<tr><td>1</td><td>터널 라이닝 선정 고려사항의 원래 출처(지침 이름·조문)</td><td>법령에 없음. 근거가 유튜브 강의 자막뿐</td></tr>
+<tr><td>2</td><td>말비계 답안에 「이하」를 썼는지</td><td>사장님 기억</td></tr>
+<tr><td>4</td><td>유해물질 문제가 게시사항(5가지)인지 사업주 조치(3가지)인지</td><td>문제 원문 없음</td></tr>
+<tr><td>6</td><td>불도저 문제가 「종류」인지 「미는 다른 장비」인지</td><td>문제 원문 없음</td></tr>
+<tr><td>7</td><td>D링 정의의 고시 원문</td><td>보호구 안전인증 고시 별표가 첨부 파일이라 글자 조회 안 됨</td></tr>
+<tr><td>8</td><td>맨 밑 빈칸(～결속) 문장 원문</td><td>문제 원문 없음</td></tr>
+<tr><td>전체</td><td>예상 점수</td><td>공단 채점 기준 비공개 — AI 추정</td></tr>
+</table></div>
+<h2>11. 기존 자료(07·08·작업형 영상정리)에 없던 것 — 다음 보강 대상</h2>
+<ul>
+<li><b>리프트 운반구 이탈 방지 = 제151조 3가지</b>(권과방지·과부하방지·비상정지) — 영상정리에 「양중기 방호장치 4개(과부하방지·권과방지·비상정지·제동)」로만 있었고, 「리프트 이탈 방지」 물음과 묶인 곳은 없었음</li>
+<li><b>유해물질 사업주 조치(법 제114조: 게시·비치 / 관리요령 게시 / 교육)</b> — 게시사항 5가지와 MSDS 관리요령 항목은 있었으나, 사업주 의무 3가지로 묶인 것은 없었음</li>
+<li>(참고) 시스템비계 조립 작업 시 준수사항(제70조)은 08·영상정리에 피벗형 받침철물·밑받침철물로 일부 있었음 — 보강 대상 아님</li>
+<li><b>불도저 종류(스트레이트·앵글·틸트)</b> — 필답형 장부에만 있고 작업형 자료(07·08·영상정리)에는 없었음</li>
+<li><b>발판 설치 곤란 시 순서(추락방호망 → 안전대, 제42조 2항)</b> — 추락방호망 숫자는 있었으나 「곤란 시 순서」 문장은 작업형 자료에 없었음</li>
+<li><b>리프트 순간풍속 35m/s(제154조)</b> — 크레인 30m/s만 있었음</li>
+</ul>
+<div class="footer">원본 = 같은 폴더 09_작업형_기출복기_2026-10-24.md · 법령 = 국가법령정보센터 현행 원문(2026-10-24 조회) · 예상 점수는 AI 추정</div>
+</body></html>

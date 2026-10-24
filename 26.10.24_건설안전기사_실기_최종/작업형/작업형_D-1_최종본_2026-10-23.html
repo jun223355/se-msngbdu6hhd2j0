@@ -1,0 +1,250 @@
+<title>작업형 D-1 최종본</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;600;700&family=Black+Han+Sans&display=swap">
+<style>
+/* 레이아웃: 한 줄 세로 흐름, 상단 고정 바(정답 가리기·목차), 표 위주 · 현장 안전표지 노랑/검정 */
+:root{
+  --bg:#fbfaf6; --fg:#1b1d1f; --mute:#5d6166; --line:#d9d6cc; --band:#1b1d1f; --bandfg:#fdfcf7;
+  --sign:#f2b705; --signfg:#1b1d1f; --warn:#c2391b; --cell:#f3f1ea; --link:#1f5fbf;
+  --disp:"Black Han Sans","IBM Plex Sans KR","Malgun Gothic",sans-serif;
+  --body:"IBM Plex Sans KR","Malgun Gothic","맑은 고딕",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141517; --fg:#e9e7e0; --mute:#a3a7ad; --line:#34373c; --band:#2a2c30; --bandfg:#f2f0e8;
+  --sign:#f2b705; --signfg:#141517; --warn:#ff7a5c; --cell:#1d1f22; --link:#7fb0ff; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141517; --fg:#e9e7e0; --mute:#a3a7ad; --line:#34373c; --band:#2a2c30; --bandfg:#f2f0e8;
+  --sign:#f2b705; --signfg:#141517; --warn:#ff7a5c; --cell:#1d1f22; --link:#7fb0ff; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--sign)}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--sign);color:var(--signfg);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:8px;
+  display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;border-bottom:3px solid var(--signfg)}
+.bar b{font-family:var(--disp);font-weight:400;font-size:17px;letter-spacing:.02em}
+.bar button{font:inherit;font-weight:700;font-size:13px;padding:5px 12px;border:2px solid var(--signfg);background:var(--signfg);color:var(--sign);border-radius:3px;cursor:pointer}
+.bar button:focus-visible{outline:3px solid var(--link);outline-offset:2px}
+.bar nav{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:13px}
+.bar nav a{color:var(--signfg);font-weight:600;text-decoration:none;border-bottom:1px solid currentColor}
+h1{font-family:var(--disp);font-weight:400;font-size:28px;line-height:1.25;margin:22px 0 4px;text-wrap:balance}
+.sub{color:var(--mute);font-size:13px;margin:0 0 14px}
+h2{font-family:var(--disp);font-weight:400;font-size:20px;background:var(--band);color:var(--bandfg);padding:6px 12px;margin:32px 0 10px;scroll-margin-top:90px}
+h2 small{font-family:var(--body);font-size:12px;font-weight:600;color:var(--sign);margin-left:8px;letter-spacing:.04em}
+h3{font-size:16px;font-weight:700;margin:20px 0 6px;padding-left:8px;border-left:6px solid var(--sign);scroll-margin-top:90px}
+.tw{overflow-x:auto;margin:6px 0 14px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{background:var(--cell);font-weight:700;font-size:13px}
+td:first-child{font-weight:600;width:30%}
+.w{color:var(--warn);font-weight:700}
+.k{background:var(--sign);color:var(--signfg);padding:0 4px;border-radius:2px;font-weight:700;white-space:nowrap}
+a{color:var(--link)}
+a.t{font-size:12px;font-weight:400;white-space:nowrap;margin-left:4px}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin:10px 0}
+.rules div{border:2px solid var(--fg);padding:8px 10px;font-size:14px;min-width:0}
+.rules div b{display:block;font-size:12px;color:var(--mute);letter-spacing:.06em}
+ul.trap{padding-left:20px;margin:6px 0}
+ul.trap li{margin:4px 0}
+.note{font-size:13px;color:var(--mute);border-top:1px solid var(--line);padding-top:10px;margin-top:30px}
+body.hide .a{color:transparent;background:var(--cell)}
+body.hide .a:hover,body.hide .a:focus{color:var(--fg)}
+body.hide .a .k,body.hide .a .w{color:transparent;background:none}
+body.hide .a:hover .k{color:var(--signfg);background:var(--sign)}
+body.hide .a:hover .w{color:var(--warn)}
+@media (max-width:520px){h1{font-size:23px}td:first-child{width:36%}table{font-size:13px}}
+</style>
+
+<div class="bar">
+  <b>작업형 D-1</b>
+  <button id="hideBtn" type="button" aria-pressed="false">정답 가리기</button>
+  <nav aria-label="목차"><a href="#p0">시험장 규칙</a><a href="#a">A 건설기계</a><a href="#b">B 장비</a><a href="#c">C 공법</a><a href="#d">D 터널</a><a href="#e">E 판독</a><a href="#f">F 밀폐</a><a href="#g">G 기타</a><a href="#trap">함정</a><a href="#num">⚠숫자</a><a href="#p1">1부 숫자</a></nav>
+</div>
+
+<div class="wrap">
+<h1>건설안전기사 작업형 — 이것만 본다</h1>
+<p class="sub">시험 2026-10-24(토) 08:30 대구디지털시험센터 5층 [3실] · 근거: 프로젝트 자료 ①영상정리 ②08 보강표 · <span class="w">붉은 숫자</span>=자동자막, 법령 확인 못 함</p>
+
+<h2 id="p0">0. 답 쓰는 법 <small>시험장에서 이것부터</small></h2>
+<div class="rules">
+  <div><b>위험요인</b>"○○ 미설치<span class="k">로 인한 추락 위험</span>" — 사실만 쓰면 반점</div>
+  <div><b>대책</b>"~를 <span class="k">설치한다</span>" 행동으로 끝냄</div>
+  <div><b>명칭</b>법 용어: 백호→<span class="k">굴착기</span>, 아시바→<span class="k">강관비계</span></div>
+  <div><b>N가지</b>딱 N개만. 더 쓰면 앞 점수 깎임</div>
+  <div><b>숫자</b>단위 + 이상/이하/초과/미만까지</div>
+</div>
+
+<h2 id="a">A. 건설기계 명칭·용도 <small>배점 1위</small></h2>
+<div class="tw"><table><thead><tr><th>기계</th><th>생김새·용도</th></tr></thead><tbody>
+<tr><td>스크레이퍼<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=1627" target="_blank" rel="noopener">⏱27:12</a></td><td class="a">에이프런(절삭날)로 긁어 깎음 · 굴착→운반→성토를 <b>한 대로</b> · 고속도로·비행장 등 넓은 현장</td></tr>
+<tr><td>로더<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=1649" target="_blank" rel="noopener">⏱27:34</a></td><td class="a">앞쪽 큰 버킷으로 토사 떠서 덤프에 적재 · 땅고르기</td></tr>
+<tr><td>불도저<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=1655" target="_blank" rel="noopener">⏱27:40</a></td><td class="a">무한궤도 + 전면 블레이드로 밀기(절토·성토·정지)</td></tr>
+<tr><td>모터 그레이더<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=1681" target="_blank" rel="noopener">⏱28:06</a></td><td class="a">차체 <b>중앙 하부</b> 긴 삽날 · 정밀 땅고르기·도로정리·제설·측구 굴착</td></tr>
+<tr><td>굴착기<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=1773" target="_blank" rel="noopener">⏱29:38</a></td><td class="a">붐·암·버킷, 뒤 카운터웨이트 · 굴착·토석 채취 (옛 이름 굴삭기)</td></tr>
+<tr><td>드래그 쇼벨(백호)<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=1853" target="_blank" rel="noopener">⏱30:58</a></td><td class="a">버킷 거꾸로 · <b>지면보다 낮은 곳</b> 퍼담음</td></tr>
+<tr><td>파워 쇼벨<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=1875" target="_blank" rel="noopener">⏱31:20</a></td><td class="a">삽처럼 · <b>지면보다 높은 곳</b> 퍼담음</td></tr>
+<tr><td>크램쉘<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=81" target="_blank" rel="noopener">⏱1:26</a></td><td class="a">조개 입 바가지를 위에서 떨궈 움켜쥠 · 좁고 깊은 <b>수직굴착</b>(우물·교각 기초)</td></tr>
+<tr><td>크롤러 드릴<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=2156" target="_blank" rel="noopener">⏱36:01</a></td><td class="a">무한궤도 · 암반 발파공·록볼트공 천공 · 경사지 가능</td></tr>
+<tr><td>천공기<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=1821" target="_blank" rel="noopener">⏱30:26</a></td><td class="a">암석 천공(구멍 뚫기)</td></tr>
+<tr><td>롤러(다짐)<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=1886" target="_blank" rel="noopener">⏱31:31</a></td><td class="a">탬핑(양족)=돌기, 고함수비 <b>점토</b> · 머캐덤=<b>3륜</b>, 초기다짐 · 탠덤=매끈, 아스팔트 마무리 · (08표엔 타이어롤러도 언급, 자세한 설명은 자료에 없음)</td></tr>
+<tr><td>아스팔트 피니셔</td><td class="a">아스팔트 포장 포설·마무리</td></tr>
+<tr><td>핸드브레이커<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=20" target="_blank" rel="noopener">⏱0:25</a></td><td class="a">손으로 잡고 콘크리트 깨는 기계(차징해머) · 지문은 <b>누전차단기</b> 문제로 이어짐</td></tr>
+<tr><td>세륜설비<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=222" target="_blank" rel="noopener">⏱3:47</a></td><td class="a">현장 출구 바퀴 세척 · 토사·비산먼지 유출 방지</td></tr>
+<tr><td>구름멈춤대</td><td class="a">덤프 후진 시 바퀴 막는 전도·충돌 방지 장치</td></tr>
+<tr><td>지게차 갖출 장치<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=2832" target="_blank" rel="noopener">⏱47:17</a></td><td class="a">전조등·후미등 / 헤드가드 / 백레스트</td></tr>
+<tr><td>둥근톱 방호장치<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=2855" target="_blank" rel="noopener">⏱47:40</a></td><td class="a">반발예방장치 / 날접촉예방장치</td></tr>
+<tr><td>믹서트럭 타설 완료</td><td class="a">기온 <span class="w">25℃ 초과 1.5시간, 25℃ 이하 2시간</span> 이내</td></tr>
+</tbody></table></div>
+
+<h2 id="b">B. 장비·자재 명칭 <small>영상 보고 이름</small></h2>
+<div class="tw"><table><thead><tr><th>영상 장면</th><th>명칭 · 기능</th></tr></thead><tbody>
+<tr><td>벨트의 D자 금속고리<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=147" target="_blank" rel="noopener">⏱2:32</a></td><td class="a"><b>D링</b> — 모든 연결의 중심</td></tr>
+<tr><td>수직구명줄에 자동잠김<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=169" target="_blank" rel="noopener">⏱2:54</a></td><td class="a"><b>추락방지대</b></td></tr>
+<tr><td>천천히=풀림, 빠르면=멈춤<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=193" target="_blank" rel="noopener">⏱3:18</a></td><td class="a"><b>안전블록</b></td></tr>
+<tr><td>와이어-화물 잇는 U+핀<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=400" target="_blank" rel="noopener">⏱6:45</a></td><td class="a"><b>샤클</b> — 점검: 마모·균열·핀 변형 (<span class="k">마균핀</span>)</td></tr>
+<tr><td>발판 끝 갈고리<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=1164" target="_blank" rel="noopener">⏱19:29</a></td><td class="a"><b>걸침고리</b> · 틀비계 구성: 걸침고리·교차가새·수평틀·연결핀</td></tr>
+<tr><td>거푸집 사이 인장부재<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=1244" target="_blank" rel="noopener">⏱20:49</a></td><td class="a"><b>거푸집 긴결재(폼타이)</b> — 간격 유지 + 측압 지지</td></tr>
+<tr><td>굴착기 암 끝 집게<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=7795" target="_blank" rel="noopener">⏱2:10:00</a></td><td class="a"><b>크러셔(압쇄기)</b> — 콘크리트 으깨고 철근 절단</td></tr>
+<tr><td>시스템비계 경사바닥</td><td class="a">피벗형 받침철물 또는 쐐기</td></tr>
+</tbody></table></div>
+
+<h2 id="c">C. 공법 명칭</h2>
+<div class="tw"><table><thead><tr><th>영상 장면</th><th>공법 · 핵심</th></tr></thead><tbody>
+<tr><td>강봉 박아 당겨 고정<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=2144" target="_blank" rel="noopener">⏱35:49</a></td><td class="a"><b>어스앵커</b> — 굴착공간 넓음, 도심지</td></tr>
+<tr><td>가로 버팀대<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=2187" target="_blank" rel="noopener">⏱36:32</a></td><td class="a"><b>버팀대(스트럿)</b> — 재료: 토류판·H파일·띠장·스트럿</td></tr>
+<tr><td>버팀대 없이 벽체만<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=2247" target="_blank" rel="noopener">⏱37:32</a></td><td class="a"><b>자립식</b> — 근입 깊게, 소규모·저심도</td></tr>
+<tr><td>미끄러지며 올라가 타설<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=6049" target="_blank" rel="noopener">⏱1:40:54</a></td><td class="a"><b>슬립폼</b> — 장점 4: 별도 비계 불필요·공기 단축·전용성 증대·설치해체 용이 · 일체형 4종 <span class="k">갱슬클터</span></td></tr>
+<tr><td>콘크리트 뿜어 붙이기<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=6496" target="_blank" rel="noopener">⏱1:48:21</a></td><td class="a"><b>숏크리트</b> — 건식(노즐 앞 물)·습식(반죽 펌프)</td></tr>
+<tr><td>원통 드릴 터널 굴착<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=6672" target="_blank" rel="noopener">⏱1:51:17</a></td><td class="a"><b>TBM</b> — 커터헤드 회전, 버력은 컨베이어</td></tr>
+<tr><td>사면 보호 구조물<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=6897" target="_blank" rel="noopener">⏱1:55:02</a></td><td class="a">모르타르뿜칠·콘크리트붙임·현장타설 격자·돌쌓기 <span class="k">모콘격돌</span> (식생공과 구분)</td></tr>
+<tr><td>가위·집게로 건물 해체<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=7779" target="_blank" rel="noopener">⏱2:09:44</a></td><td class="a"><b>압쇄 공법</b></td></tr>
+<tr><td>보강토 옹벽<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=6826" target="_blank" rel="noopener">⏱1:53:51</a></td><td class="a">명칭=보강토 옹벽 · 시공 중 안전시설=<b>안전대 부착설비</b></td></tr>
+<tr><td>PC(프리캐스트)</td><td class="a">공장 제작·품질 균일·공기 단축·현장 소음 감소</td></tr>
+</tbody></table></div>
+
+<h2 id="d">D. 터널</h2>
+<div class="tw"><table><thead><tr><th>물음</th><th>답</th></tr></thead><tbody>
+<tr><td>굴착 계측</td><td class="a">내공변위·천단침하·지중변위 <span class="k">내천지</span> (+록볼트 축력·숏크리트 응력)</td></tr>
+<tr><td>록볼트 역할</td><td class="a">봉합·보형성·보강·내압 <span class="k">봉보보내</span></td></tr>
+<tr><td>록볼트 기준</td><td class="a">직경 <span class="w">25mm</span> 원칙 · 고려: 원지반 강도·암반특성 / 절리 간격·방향 / 단면규격 / 사용목적</td></tr>
+<tr><td>뿜칠 최소두께</td><td class="a">약간취약 <span class="w">2</span> / 약간파괴 <span class="w">3</span> / 파괴 <span class="w">5</span> / 매우파괴 <span class="w">7</span> / 팽창성 <span class="w">15</span> cm (오차 위험 큼)</td></tr>
+<tr><td>자동경보장치 점검<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=6799" target="_blank" rel="noopener">⏱1:53:24</a></td><td class="a">계기 이상·검지부 이상·경보장치 작동상태</td></tr>
+<tr><td>라이닝 기능</td><td class="a">지반압력 지지·방수·내구성·미관</td></tr>
+<tr><td>라이닝 검토</td><td class="a">지질·암질 / 단면 형상 / 굴착공법 / 작업능률</td></tr>
+<tr><td>버력처리 장비 선정 <b>3</b><a class="t" href="https://youtu.be/y3fSQSJT36Y?t=6242" target="_blank" rel="noopener">⏱1:44:07</a></td><td class="a">터널 경사도 · 굴착방식 · 운반통로 노면상태</td></tr>
+<tr><td>낙반 방지</td><td class="a">부석 제거·록볼트·터널 지보공 <span class="k">부럭터</span></td></tr>
+<tr><td>터널 내 용접 화재예방</td><td class="a">인화물 제거·불연성 덮개·격벽 / 소화설비 위치·사용법 주지 / 종료 후 불티 확인</td></tr>
+</tbody></table></div>
+
+<h2 id="e">E. 영상 판독 (위험요인·기인물)</h2>
+<div class="tw"><table><tbody>
+<tr><td>위험요인 관점</td><td class="a">추락(난간·발판·승강설비·안전대) / 낙하(방지망·상하 동시작업) / 기계(연삭기 덮개·마스크·보안경)</td></tr>
+<tr><td>기인물 vs 가해물</td><td class="a"><b>기인물</b>=근본 원인(예: 굴착기) · <b>가해물</b>=직접 몸에 닿은 것(예: 흄관)</td></tr>
+<tr><td>재해 형태</td><td class="a">맞음 / 끼임 / 떨어짐 등</td></tr>
+<tr><td>로프 지름 7% 계산</td><td class="a">공칭 20mm × 7% = 1.4mm → <b>18.6mm 미만이면 폐기</b></td></tr>
+</tbody></table></div>
+
+<h2 id="f">F. 밀폐공간</h2>
+<div class="tw"><table><tbody>
+<tr><td>안전수칙</td><td class="a">작업 전 산소·유해가스 측정 / 환기 / 곤란 시 송기마스크</td></tr>
+<tr><td>사업주 직무</td><td class="a"><b>작업 프로그램 수립·시행</b> / 농도 측정·평가 / 환기</td></tr>
+<tr><td>관리감독자 직무</td><td class="a">작업방법 결정·지휘 / 공기 적정 확인 / 측정장비·환기장치·보호구 점검</td></tr>
+<tr><td>프로그램 내용</td><td class="a">위치 파악·관리 / 유해요인 파악 / 사전확인 절차 / 교육·훈련</td></tr>
+<tr><td>구조자 호흡보호구</td><td class="a">공기호흡기 또는 송기마스크</td></tr>
+<tr><td>피난용구</td><td class="a">공기호흡기·사다리·섬유로프 <span class="k">공사섬</span></td></tr>
+</tbody></table></div>
+
+<h2 id="g">G. 기타 단골</h2>
+<div class="tw"><table><tbody>
+<tr><td>화재감시자<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=1506" target="_blank" rel="noopener">⏱25:11</a></td><td class="a">반경 <span class="w">11m</span> 이내 가연물 / 11m 밖도 발화 우려 / 금속 칸막이 반대면 · 역할: 가연물 확인·가스경보기 확인·대피 유도</td></tr>
+<tr><td>철골 작업중지</td><td class="a">풍속 10m/s 이상 · 강우 1mm/h 이상 · 강설 1cm/h 이상 <span class="k">10·1·1</span></td></tr>
+<tr><td>철골 추락방지 4</td><td class="a">비계 · 추락방호망 · 안전난간(울타리) · 안전대 부착설비</td></tr>
+<tr><td>철골 승강용 트랩</td><td class="a">철근 <span class="w">16mm</span> 이상 · 간격 <span class="w">30cm</span> 이내 · 폭 <span class="w">30cm</span> 이상</td></tr>
+<tr><td>앵커볼트 접속</td><td class="a">바로 위서 멈춤→손 닿게 내림 / 흔들림 없이 천천히 / 베이스 구멍 보며(끼임 주의)</td></tr>
+<tr><td>안전모<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=5068" target="_blank" rel="noopener">⏱1:24:33</a></td><td class="a">관통 AE·AB 9.5mm 이하 / AB 11.1mm 이하 / 전달충격력 4,450N 이하</td></tr>
+<tr><td>고소작업대</td><td class="a"><b>사용 시</b>(제186조④): 안전모·안전대 착용 · 관계자 외 출입금지 · 적정 조도 유지 · 전로 근접 시 감전 방지 · 작업대 정기점검 / <b>설치 시</b>(제186조①): 와이어로프·체인 안전율 5 이상 · 권과방지 · 정격하중 표시 · 가드 또는 과상승방지장치 · 아웃트리거 또는 브레이크(②) / <b>이동 시</b>(③): 작업대 가장 낮게 · 작업자 태우고 이동 금지 — 문제에 "설치"인지 "사용"인지 보고 고름</td></tr>
+<tr><td>이동식 금속제 사다리</td><td class="a">길이 <span class="w">6m 이하</span> · 디딤대 <span class="w">25~35cm</span> (고정식과 별개)</td></tr>
+<tr><td>인력굴착</td><td class="a">안전담당자 지휘 · 기울기 유지 · 지보공 점검 · 굴착심도 준수</td></tr>
+<tr><td>흙막이 계측기 7</td><td class="a">지중침하계·지하수위계·간극수압계·토압계·응력계·하중계·경사계</td></tr>
+<tr><td>석축 붕괴원인<a class="t" href="https://youtu.be/y3fSQSJT36Y?t=6844" target="_blank" rel="noopener">⏱1:54:09</a></td><td class="a"><b>배수 불량(1위)</b> · 석재 불량 · 뒤채움 불량</td></tr>
+<tr><td>전격 위험도 4</td><td class="a">통전전류 크기·통전시간·통전경로·전원 종류</td></tr>
+<tr><td>자동전격방지기 장소 3</td><td class="a">이중선체·탱크 등 도전체 둘러싸인 곳 / 2m 이상 추락위험 + 철골 접촉 / 물·땀 습윤 장소</td></tr>
+<tr><td>꽂음접속기 4</td><td class="a">다른 전압 접속 불가 구조 · 습한 곳 방수형 · 젖은 손 금지 · 잠금장치(탈락방지)</td></tr>
+<tr><td>동력 작동 문</td><td class="a">높이 <span class="w">2.5m</span> · 비상정지 · 동력차단 시 즉시정지 · 수동개폐 · 제어장치</td></tr>
+<tr><td>MSDS 관리요령</td><td class="a">제품명·보호구 / 건강·환경 유해성·물리적 위험 / 취급주의</td></tr>
+<tr><td>유해물질 게시사항</td><td class="a">명칭·인체영향·취급주의·보호구·응급조치·긴급방제 (MSDS와 <b>구분</b>)</td></tr>
+<tr><td>분진작업 고지</td><td class="a"><b>5가지</b>(제614조): 분진의 유해성과 노출경로 · 발산 방지와 환기 방법 · 작업장 및 개인위생 관리 · 호흡용 보호구 사용 방법 · <b>질병 예방 방법</b></td></tr>
+<tr><td>가스농도 측정 시점</td><td class="a">매일 작업 시작 전 · <b>가스 누출이 의심될 때</b> · 가스가 발생하거나 정체할 위험 장소 · 장시간 작업 시 4시간마다 (제296조)</td></tr>
+<tr><td>작업장 조도</td><td class="a">초정밀 750 / 정밀 300 / 보통 150 / 그 밖 75 lx 이상</td></tr>
+<tr><td>가스용기</td><td class="a">전도 방지 · 충격 금지 · 운반 시 캡 · 마개 유류·먼지 제거 · 밸브 서서히</td></tr>
+<tr><td>장약작업 (발파와 구분)</td><td class="a">화기·흡연 금지 · 전기용접·동력기계 금지 · 보호구 · 기존 발파공 재장약 금지</td></tr>
+<tr><td>지게차 화물 인양</td><td class="a">5~10cm 들어 정지·확인 → 마스트 뒤로 → 10~30cm로 주행</td></tr>
+<tr><td>교량 작업계획서</td><td class="a">(높이 5m 이상·지간 30m 이상) 방법·순서 / 낙하·전도·붕괴 방지 / 추락 방지 / 가설구조물 안전성 / 기계 종류·성능 / 작업지휘자</td></tr>
+<tr><td>해체 작업계획서</td><td class="a">방법·순서 / 가설·방호·환기·살수·방화 설비 / 연락방법 / 해체물 처분 / 기계기구 / 화약 사용</td></tr>
+<tr><td>타워크레인 설치·해체업</td><td class="a"><span class="w">4명 이상</span>, 기능사 또는 교육수료 후 <span class="w">5년 이내</span></td></tr>
+<tr><td>차량계 충돌 방지</td><td class="a">유도자 배치 · 제한속도 · 일방통행</td></tr>
+<tr><td>결빙 도로</td><td class="a">눈·얼음 제거 · 모래·부직포 · 작업중지</td></tr>
+<tr><td>노출 철근 보호</td><td class="a">방청 덮개 · 비닐 피복·차폐 · 임시 방청제</td></tr>
+</tbody></table></div>
+
+<h2 id="trap">함정 — 헷갈리면 감점</h2>
+<ul class="trap">
+<li><b>파이프서포트</b> 높이 3.5m <b>초과</b>일 때만 2m 이내마다 수평연결재 2방향 ↔ <b>조립강주</b> 높이 4m <b>초과</b> 시 <b>4m 이내마다</b> 수평연결재 2방향 (현행 제332조의2) <span class="w">⚠ 자막의 강관지주 3.6m·1.8m는 현행 규칙에 없음 — 쓰지 말 것</span></li>
+<li><b>타워크레인 풍속</b> 설치·수리·점검·해체 10m/s ↔ 운전 15m/s — 따로 쓸 것</li>
+<li><b>와이어로프 클립</b> 9~16mm 4개 / 17~28mm 5개 / 30mm 이상 6개 · U볼트는 <b>짧은 쪽(죽은 줄)</b> · 나사 2/3 이상 조임</li>
+<li><b>발파</b>(뇌관·발파봉·30m) ↔ <b>장약</b>(화기금지·보호구)</li>
+<li><b>MSDS 포함사항</b> ↔ <b>취급장 게시사항</b> ↔ <b>분진 고지사항</b></li>
+<li><b>굴착 전 점검</b> ↔ <b>굴착 작업계획서</b></li>
+<li><b>이동식 금속제 사다리</b>(6m 이하) ↔ <b>고정식 사다리식 통로</b></li>
+<li><b>슬립폼</b> ↔ 갱폼 · <b>폼타이=거푸집 긴결재</b> 이름 쓰기</li>
+<li><b>충전로 접근금지</b> 비유자격자 50kV 이하 300cm, 초과 시 10kV당 10cm 추가 <span class="w">⚠</span></li>
+<li><b>히빙</b>=점토, 대책에 아일랜드컷 추가 ↔ <b>보일링</b>=사질토</li>
+</ul>
+
+<h2 id="num">⚠ 자막 숫자 — 확인 못 함, 쓰더라도 이 값</h2>
+<div class="tw"><table><thead><tr><th>항목</th><th>자막 값</th></tr></thead><tbody>
+<tr><td>파이프서포트</td><td class="a">3.5m→2m (기존 자료와 <b>일치</b>)</td></tr>
+<tr><td>클립 17~28mm</td><td class="a">5개 (<b>일치</b>, 16/17 경계만 주의)</td></tr>
+<tr><td>비비기→치기</td><td class="a w">25℃ 초과 1.5h / 이하 2h</td></tr>
+<tr><td>록볼트 직경</td><td class="a w">25mm</td></tr>
+<tr><td>뿜칠 두께</td><td class="a w">2/3/5/7/15cm</td></tr>
+<tr><td>금속제 사다리</td><td class="a w">6m 이하</td></tr>
+<tr><td>화재감시자</td><td class="a w">11m</td></tr>
+<tr><td>동력문</td><td class="a w">2.5m</td></tr>
+<tr><td>강관지주</td><td class="a">자막 3.6m→1.8m <span class="w">⚠ 현행 규칙(제332조의2)에 없음 — 조립강주 4m→4m로 씀</span></td></tr>
+</tbody></table></div>
+
+<h2 id="p1">1부 겹침 — 숫자만 <small>필답형(11-07)에도 그대로</small></h2>
+<div class="tw"><table><tbody>
+<tr><td>굴착면 기울기</td><td class="a">모래 1:1.8 / 연암·풍화암 1:1 / 경암 1:0.5 / 그 밖 1:1.2</td></tr>
+<tr><td>강관비계</td><td class="a">단관 5×5 / 틀비계 6×8 / 띠장 2m / 기둥 1.85m·1.5m / 31m 밑 2개 강관 / 400kg</td></tr>
+<tr><td>작업발판</td><td class="a">폭 40cm 이상 · 틈 3cm 이하</td></tr>
+<tr><td>사다리식 통로</td><td class="a">15cm / 폭 30cm / 10m 이상→5m마다 계단참 / 75° / 상단 60cm</td></tr>
+<tr><td>가설통로</td><td class="a">30° 이하 / 15° 초과 미끄럼방지 / 수직갱 15m→10m / 비계다리 8m→7m</td></tr>
+<tr><td>안전난간</td><td class="a">상부 90cm 이상 / 간격 60cm 이하 / 발끝막이 10cm 이상</td></tr>
+<tr><td>추락방호망</td><td class="a">10m 초과 금지 / 처짐 12% 이상 / 내민길이 3m 이상</td></tr>
+<tr><td>낙하물방지망</td><td class="a">10m 이내마다 / 2m 이상 / 20~30°</td></tr>
+<tr><td>투하설비</td><td class="a">3m 이상</td></tr>
+<tr><td>와이어로프 안전계수</td><td class="a">사람 10 / 화물 5 / 훅·샤클 3 / 그 밖 4</td></tr>
+<tr><td>로프 폐기</td><td class="a">소선 10% 이상 절단 / 지름 7% 초과 감소</td></tr>
+<tr><td>누전차단기</td><td class="a">대지전압 150V 초과 이동형 / 도전성 장소 / 임시배선 / 수변 저압 <span class="k">대도임저</span></td></tr>
+<tr><td>잠함·수직갱</td><td class="a">20m 초과 → 통신설비</td></tr>
+<tr><td>차량계 작업계획서</td><td class="a">종류·성능 / 운행경로 / 작업방법</td></tr>
+<tr><td>지보공 점검</td><td class="a">손변부변탈 · 긴압 · 접부교 · 침하 (흙막이=터널 동일)</td></tr>
+<tr><td>동바리 침하 방지</td><td class="a">받침목·깔판 / 콘크리트 타설 / 말뚝 <span class="k">박콘말</span></td></tr>
+<tr><td>양중기 방호장치</td><td class="a">과부하방지·권과방지·비상정지·제동</td></tr>
+</tbody></table></div>
+
+<p class="note">출처: 유튜브 파이팅공TV 작업형 올인원 자동자막(youtu.be/y3fSQSJT36Y) 기반 프로젝트 자료 2개. 자료에 없는 내용은 넣지 않음. 위 "정답 가리기"를 누르면 오른쪽 칸이 가려지고, 손가락으로 누르거나 마우스를 올리면 보임.</p>
+</div>
+
+<script>
+(function(){
+  var b=document.getElementById('hideBtn');
+  document.querySelectorAll('td.a').forEach(function(td){td.tabIndex=0;});
+  b.addEventListener('click',function(){
+    var on=document.body.classList.toggle('hide');
+    b.textContent=on?'정답 보이기':'정답 가리기';
+    b.setAttribute('aria-pressed',on);
+  });
+})();
+</script>

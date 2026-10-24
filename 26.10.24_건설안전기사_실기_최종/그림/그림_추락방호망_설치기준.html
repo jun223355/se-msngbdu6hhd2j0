@@ -1,0 +1,86 @@
+<title>추락방호망 설치기준 — 10m·12%·3m</title>
+<style>
+  :root {
+    --bg: #faf9f6; --card: #ffffff; --ink: #26251f; --muted: #7d7a70;
+    --line: #e2dfd7; --wall: #8a8578; --net: #3f7a45; --key: #c2542a; --slab: #d8d4c8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1c1b18; --card: #262420; --ink: #e8e6df; --muted: #9a968a;
+      --line: #3a3831; --wall: #6f6b60; --net: #7fbf86; --key: #e07a4e; --slab: #4a4740; }
+  }
+  :root[data-theme="dark"] { --bg: #1c1b18; --card: #262420; --ink: #e8e6df; --muted: #9a968a;
+    --line: #3a3831; --wall: #6f6b60; --net: #7fbf86; --key: #e07a4e; --slab: #4a4740; }
+  :root[data-theme="light"] { --bg: #faf9f6; --card: #ffffff; --ink: #26251f; --muted: #7d7a70;
+    --line: #e2dfd7; --wall: #8a8578; --net: #3f7a45; --key: #c2542a; --slab: #d8d4c8; }
+  body { background: var(--bg); color: var(--ink);
+    font-family: "Malgun Gothic", "맑은 고딕", "Apple SD Gothic Neo", sans-serif;
+    line-height: 1.6; margin: 0; padding: 28px 16px 60px; }
+  .wrap { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+  h1 { font-size: 1.35rem; margin: 0; text-wrap: balance; }
+  h1 .accent { color: var(--key); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 16px; overflow-x: auto; }
+  svg { display: block; max-width: 100%; height: auto; }
+  .memo { text-align: center; font-size: 1.05rem; background: var(--card);
+    border: 1px dashed var(--line); border-radius: 8px; padding: 14px; }
+@media print{ body{background:#fff;} .card,.memo,.legend,svg{break-inside:avoid; page-break-inside:avoid;} }
+</style>
+
+<div class="wrap">
+  <h1>추락방호망 — <span class="accent">10m 아래 · 12% 처지고 · 3m 내밀고</span></h1>
+
+  <div class="card">
+    <svg viewBox="0 0 660 480" role="img" aria-label="건물 벽에 설치한 추락방호망: 수직거리 10m 이내, 내민길이 3m, 처짐 12%">
+      <!-- 건물 -->
+      <rect x="50" y="30" width="130" height="420" fill="var(--slab)" stroke="var(--wall)" stroke-width="3"/>
+      <line x1="50" y1="120" x2="180" y2="120" stroke="var(--wall)" stroke-width="2"/>
+      <line x1="50" y1="210" x2="180" y2="210" stroke="var(--wall)" stroke-width="2"/>
+      <line x1="50" y1="300" x2="180" y2="300" stroke="var(--wall)" stroke-width="2"/>
+      <line x1="50" y1="390" x2="180" y2="390" stroke="var(--wall)" stroke-width="2"/>
+      <text x="115" y="80" text-anchor="middle" font-size="15" fill="var(--muted)">건물</text>
+      <!-- 작업면 + 사람 -->
+      <line x1="180" y1="120" x2="240" y2="120" stroke="var(--ink)" stroke-width="4"/>
+      <text x="250" y="112" font-size="15" fill="var(--ink)" font-weight="bold">작업면 (일하는 곳)</text>
+      <!-- 스틱맨 -->
+      <circle cx="210" cy="85" r="9" fill="none" stroke="var(--ink)" stroke-width="3"/>
+      <line x1="210" y1="94" x2="210" y2="112" stroke="var(--ink)" stroke-width="3"/>
+      <line x1="210" y1="100" x2="198" y2="108" stroke="var(--ink)" stroke-width="3"/>
+      <line x1="210" y1="100" x2="222" y2="108" stroke="var(--ink)" stroke-width="3"/>
+      <line x1="210" y1="112" x2="202" y2="120" stroke="var(--ink)" stroke-width="3"/>
+      <line x1="210" y1="112" x2="218" y2="120" stroke="var(--ink)" stroke-width="3"/>
+      <!-- 방호망 (처짐 곡선) -->
+      <path d="M 180 330 Q 330 385 480 330" fill="none" stroke="var(--net)" stroke-width="5"/>
+      <!-- 그물 표현 -->
+      <g stroke="var(--net)" stroke-width="1.5" opacity="0.6">
+        <path d="M 210 341 Q 330 380 450 341" fill="none"/>
+        <line x1="230" y1="347" x2="238" y2="368"/><line x1="280" y1="357" x2="286" y2="374"/>
+        <line x1="330" y1="360" x2="330" y2="378"/><line x1="380" y1="357" x2="374" y2="374"/>
+        <line x1="430" y1="347" x2="422" y2="368"/>
+      </g>
+      <text x="490" y="325" font-size="16" fill="var(--net)" font-weight="bold">추락방호망</text>
+      <!-- 지지대 -->
+      <line x1="480" y1="330" x2="180" y2="255" stroke="var(--muted)" stroke-width="2" stroke-dasharray="6 4"/>
+      <!-- 치수: 수직거리 10m -->
+      <line x1="300" y1="120" x2="300" y2="330" stroke="var(--key)" stroke-width="2"/>
+      <polygon points="300,120 295,130 305,130" fill="var(--key)"/>
+      <polygon points="300,330 295,320 305,320" fill="var(--key)"/>
+      <text x="312" y="210" font-size="16" fill="var(--key)" font-weight="bold">수직거리</text>
+      <text x="312" y="232" font-size="16" fill="var(--key)" font-weight="bold">10m 이내!</text>
+      <text x="312" y="254" font-size="13" fill="var(--muted)">(작업면에서 가깝게)</text>
+      <!-- 치수: 내민길이 3m -->
+      <line x1="180" y1="420" x2="480" y2="420" stroke="var(--key)" stroke-width="2"/>
+      <polygon points="180,420 190,415 190,425" fill="var(--key)"/>
+      <polygon points="480,420 470,415 470,425" fill="var(--key)"/>
+      <text x="330" y="443" text-anchor="middle" font-size="16" fill="var(--key)" font-weight="bold">벽에서 내민 길이 3m 이상</text>
+      <!-- 처짐 표시 -->
+      <line x1="330" y1="330" x2="330" y2="358" stroke="var(--net)" stroke-width="2"/>
+      <polygon points="330,358 325,348 335,348" fill="var(--net)"/>
+      <text x="342" y="368" font-size="14" fill="var(--net)" font-weight="bold">처짐 = 짧은 변의 12% 이상</text>
+      <text x="342" y="386" font-size="13" fill="var(--muted)">(팽팽하면 튕겨나감 — 늘어져야 받아줌)</text>
+      <text x="50" y="470" font-size="14" fill="var(--muted)">※ 그물코 20mm 이하 방망이면 낙하물방지망 겸용 가능 / 수평으로 설치</text>
+    </svg>
+  </div>
+
+  <div class="memo">
+    암기: <b>"10 아래, 12 처지고, 3 내밀고"</b> / 방망사 신품 인장강도(그물코 10cm): 매듭 <b>200kg</b>·무매듭 <b>240kg</b>
+  </div>
+</div>

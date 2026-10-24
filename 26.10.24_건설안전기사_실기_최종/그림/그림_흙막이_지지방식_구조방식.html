@@ -1,0 +1,214 @@
+<title>흙막이 공법 — 지지방식·구조방식 분류</title>
+<style>
+  :root {
+    --bg: #faf9f6; --card: #ffffff; --ink: #26251f; --muted: #7d7a70;
+    --line: #e2dfd7; --wall: #3a5f8a; --soil: #d8cfc0; --key: #c2542a; --sup: #3f7a45;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1c1b18; --card: #262420; --ink: #e8e6df; --muted: #9a968a;
+      --line: #3a3831; --wall: #7fa8d4; --soil: #4a4436; --key: #e07a4e; --sup: #7fbf86; }
+  }
+  body { background: var(--bg); color: var(--ink);
+    font-family: "Malgun Gothic", "맑은 고딕", "Apple SD Gothic Neo", sans-serif;
+    line-height: 1.6; margin: 0; padding: 28px 16px 60px; }
+  .wrap { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+  h1 { font-size: 1.35rem; margin: 0; }
+  h1 .accent { color: var(--key); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 16px; overflow-x: auto; }
+  .card h2 { font-size: 1.02rem; margin: 0 0 4px; }
+  .card p.sub { margin: 0 0 12px; color: var(--muted); font-size: 0.88rem; }
+  svg { display: block; max-width: 100%; height: auto; }
+  .memo { text-align: center; font-size: 1.05rem; background: var(--card);
+    border: 1px dashed var(--line); border-radius: 8px; padding: 14px; }
+@media print{ body{background:#fff;} .card,.memo,.legend,svg{break-inside:avoid; page-break-inside:avoid;} }
+</style>
+
+<div class="wrap">
+  <h1>흙막이 공법 — <span class="accent">지지방식(어떻게 버티나)</span> · <span class="accent">구조방식(벽을 뭘로)</span></h1>
+
+  <div class="card">
+    <h2>① 지지방식 — "자·버·앵"</h2>
+    <p class="sub">굴착한 뒤 벽이 넘어지지 않게 무엇으로 버티는가</p>
+    <svg viewBox="0 0 720 300" role="img" aria-label="지지방식 3종: 자립식, 버팀대식, 어스앵커식">
+      <!-- 공통 지반선 -->
+      <line x1="10" y1="60" x2="710" y2="60" stroke="var(--muted)" stroke-width="2"/>
+      <!-- ===== 자립식 ===== -->
+      <text x="110" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="var(--ink)">[자립식]</text>
+      <rect x="30" y="60" width="80" height="180" fill="var(--soil)"/>
+      <line x1="110" y1="40" x2="110" y2="270" stroke="var(--wall)" stroke-width="8"/>
+      <text x="70" y="150" text-anchor="middle" font-size="13" fill="var(--muted)">배면토</text>
+      <text x="125" y="120" font-size="13" fill="var(--wall)" font-weight="bold">벽체 혼자</text>
+      <text x="125" y="138" font-size="13" fill="var(--wall)">(근입깊이로 버팀)</text>
+      <text x="110" y="292" text-anchor="middle" font-size="12" fill="var(--muted)">얕은 굴착만</text>
+      <!-- ===== 버팀대식 ===== -->
+      <text x="360" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="var(--ink)">[버팀대식(스트럿)]</text>
+      <line x1="280" y1="40" x2="280" y2="270" stroke="var(--wall)" stroke-width="8"/>
+      <line x1="440" y1="40" x2="440" y2="270" stroke="var(--wall)" stroke-width="8"/>
+      <!-- 수평 버팀대 2단 -->
+      <line x1="284" y1="100" x2="436" y2="100" stroke="var(--sup)" stroke-width="7"/>
+      <line x1="284" y1="170" x2="436" y2="170" stroke="var(--sup)" stroke-width="7"/>
+      <text x="360" y="92" text-anchor="middle" font-size="13" fill="var(--sup)" font-weight="bold">수평 버팀대</text>
+      <!-- 레이커 -->
+      <line x1="436" y1="220" x2="380" y2="266" stroke="var(--sup)" stroke-width="5" stroke-dasharray="7 4"/>
+      <text x="378" y="248" text-anchor="end" font-size="12" fill="var(--sup)">경사(레이커)</text>
+      <text x="360" y="292" text-anchor="middle" font-size="12" fill="var(--muted)">맞은편 벽·바닥에 기대 버팀</text>
+      <!-- ===== 어스앵커식 ===== -->
+      <text x="600" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="var(--ink)">[어스앵커식]</text>
+      <rect x="620" y="60" width="90" height="180" fill="var(--soil)"/>
+      <line x1="620" y1="40" x2="620" y2="270" stroke="var(--wall)" stroke-width="8"/>
+      <!-- 앵커 2단: 벽에서 배면토 속으로 경사 -->
+      <line x1="620" y1="100" x2="700" y2="140" stroke="var(--key)" stroke-width="5"/>
+      <rect x="688" y="128" width="22" height="10" transform="rotate(27 699 133)" fill="var(--key)"/>
+      <line x1="620" y1="165" x2="700" y2="205" stroke="var(--key)" stroke-width="5"/>
+      <rect x="688" y="193" width="22" height="10" transform="rotate(27 699 198)" fill="var(--key)"/>
+      <text x="655" y="95" font-size="13" fill="var(--key)" font-weight="bold">앵커체</text>
+      <text x="600" y="292" text-anchor="middle" font-size="12" fill="var(--muted)">배면 지반에 묶어 버팀(안쪽 작업공간 넓음)</text>
+    </svg>
+  </div>
+
+  <div class="card">
+    <h2>② 구조방식 — "엄·널·주·연" (위에서 내려다본 벽 단면)</h2>
+    <p class="sub">흙을 막는 벽체 자체를 무엇으로 만드는가 — 오른쪽으로 갈수록 차수·강성 좋고 비쌈</p>
+    <svg viewBox="0 0 720 250" role="img" aria-label="구조방식 4종 평면: H말뚝+토류판, 널말뚝, 주열식, 지하연속벽">
+      <!-- ===== H말뚝+토류판 ===== -->
+      <text x="95" y="30" text-anchor="middle" font-size="15" font-weight="bold" fill="var(--ink)">[H-말뚝+토류판]</text>
+      <g fill="var(--wall)">
+        <path d="M30 60 h14 v6 h-4 v12 h4 v6 h-14 v-6 h4 v-12 h-4 z"/>
+        <path d="M85 60 h14 v6 h-4 v12 h4 v6 h-14 v-6 h4 v-12 h-4 z"/>
+        <path d="M140 60 h14 v6 h-4 v12 h4 v6 h-14 v-6 h4 v-12 h-4 z"/>
+      </g>
+      <rect x="46" y="68" width="37" height="8" fill="var(--key)"/>
+      <rect x="101" y="68" width="37" height="8" fill="var(--key)"/>
+      <text x="95" y="105" text-anchor="middle" font-size="12" fill="var(--key)">토류판(나무판) 끼움</text>
+      <text x="95" y="125" text-anchor="middle" font-size="12" fill="var(--muted)">저렴 / 차수 안 됨</text>
+      <!-- ===== 널말뚝 ===== -->
+      <text x="275" y="30" text-anchor="middle" font-size="15" font-weight="bold" fill="var(--ink)">[널말뚝(시트파일)]</text>
+      <path d="M210 64 l20 0 l8 10 l20 0 l8 -10 l20 0 l8 10 l20 0 l8 -10 l18 0"
+            fill="none" stroke="var(--wall)" stroke-width="7"/>
+      <text x="275" y="105" text-anchor="middle" font-size="12" fill="var(--wall)">강판을 지그재그 맞물림</text>
+      <text x="275" y="125" text-anchor="middle" font-size="12" fill="var(--muted)">차수 O / 연약지반·항타 소음</text>
+      <!-- ===== 주열식 ===== -->
+      <text x="455" y="30" text-anchor="middle" font-size="15" font-weight="bold" fill="var(--ink)">[주열식(CIP·SCW)]</text>
+      <g fill="none" stroke="var(--wall)" stroke-width="5">
+        <circle cx="400" cy="72" r="12"/><circle cx="420" cy="72" r="12"/><circle cx="440" cy="72" r="12"/>
+        <circle cx="460" cy="72" r="12"/><circle cx="480" cy="72" r="12"/><circle cx="500" cy="72" r="12"/>
+      </g>
+      <text x="455" y="105" text-anchor="middle" font-size="12" fill="var(--wall)">현장 콘크리트 기둥을 줄지어</text>
+      <text x="455" y="125" text-anchor="middle" font-size="12" fill="var(--muted)">소음 적음 / 도심지</text>
+      <!-- ===== 지하연속벽 ===== -->
+      <text x="630" y="30" text-anchor="middle" font-size="15" font-weight="bold" fill="var(--ink)">[지하연속벽]</text>
+      <rect x="560" y="62" width="140" height="20" fill="var(--wall)"/>
+      <line x1="607" y1="62" x2="607" y2="82" stroke="var(--card)" stroke-width="2"/>
+      <line x1="654" y1="62" x2="654" y2="82" stroke="var(--card)" stroke-width="2"/>
+      <text x="630" y="105" text-anchor="middle" font-size="12" fill="var(--wall)">패널 통벽(슬러리월)</text>
+      <text x="630" y="125" text-anchor="middle" font-size="12" fill="var(--muted)">차수·강성 최고 / 대심도 / 고가</text>
+      <!-- 화살표: 성능/가격 방향 -->
+      <line x1="60" y1="180" x2="660" y2="180" stroke="var(--key)" stroke-width="3"/>
+      <polygon points="660,180 646,173 646,187" fill="var(--key)"/>
+      <text x="360" y="205" text-anchor="middle" font-size="14" fill="var(--key)" font-weight="bold">→ 차수성·강성·비용 증가 (얕고 싸게 ~ 깊고 비싸게)</text>
+      <text x="360" y="235" text-anchor="middle" font-size="13" fill="var(--muted)">시험 단골: "차수가 필요한 연약지반 → 널말뚝·지하연속벽 / 지하수 없으면 H말뚝+토류판"</text>
+    </svg>
+  </div>
+
+  <div class="card">
+    <h2>①-보충 — 탑다운(역타): 슬래브가 버팀대</h2>
+    <p class="sub">지하연속벽+기둥 먼저 → 1층 슬래브 → 슬래브 밑을 파 내려감 (지상은 동시에 위로)</p>
+    <svg viewBox="0 0 720 240" role="img" aria-label="탑다운 공법 단면">
+      <line x1="10" y1="60" x2="710" y2="60" stroke="var(--muted)" stroke-width="2"/>
+      <text x="14" y="52" font-size="12" fill="var(--muted)">지표</text>
+      <!-- 양쪽 지하연속벽 -->
+      <rect x="150" y="60" width="20" height="160" fill="var(--wall)"/>
+      <rect x="550" y="60" width="20" height="160" fill="var(--wall)"/>
+      <text x="140" y="150" text-anchor="end" font-size="13" fill="var(--wall)" font-weight="bold">지하연속벽</text>
+      <!-- 1층 슬래브 = 버팀대 -->
+      <rect x="170" y="66" width="380" height="16" fill="var(--sup)"/>
+      <text x="360" y="100" text-anchor="middle" font-size="14" fill="var(--sup)" font-weight="bold">1층 슬래브 = 버팀대 (본구조물이 지지)</text>
+      <!-- 중간 기둥 -->
+      <line x1="360" y1="82" x2="360" y2="215" stroke="var(--muted)" stroke-width="6"/>
+      <text x="372" y="180" font-size="12" fill="var(--muted)">기둥(선시공)</text>
+      <!-- 아래 굴착 진행 -->
+      <line x1="172" y1="150" x2="548" y2="150" stroke="var(--ink)" stroke-width="2" stroke-dasharray="8 5"/>
+      <text x="360" y="143" text-anchor="middle" font-size="12" fill="var(--ink)">↓ 슬래브 밑을 단계별 굴착(역타)</text>
+      <!-- 지상 동시 시공 -->
+      <rect x="240" y="20" width="240" height="12" fill="none" stroke="var(--key)" stroke-width="3" stroke-dasharray="6 4"/>
+      <text x="500" y="32" font-size="13" fill="var(--key)" font-weight="bold">← 지상층 동시 시공(공기 단축)</text>
+      <text x="360" y="235" text-anchor="middle" font-size="12" fill="var(--muted)">도심지 대심도 / 소음·진동 적음 / 버팀대 해체 공정 없음</text>
+    </svg>
+  </div>
+
+  <div class="card">
+    <h2>②-단면 — 구조방식 4종 (옆에서 본 모습, 왼쪽=굴착측 · 오른쪽=배면토)</h2>
+    <p class="sub">공통: 벽은 굴착저면보다 깊게 박는다(근입) — 근입이 얕으면 히빙·보일링</p>
+    <svg viewBox="0 0 720 340" role="img" aria-label="구조방식 4종 단면도">
+      <!-- 공통 지표선 -->
+      <line x1="10" y1="60" x2="710" y2="60" stroke="var(--muted)" stroke-width="2"/>
+      <text x="14" y="52" font-size="12" fill="var(--muted)">지표</text>
+
+      <!-- ===== 1. H말뚝+토류판 ===== -->
+      <text x="95" y="30" text-anchor="middle" font-size="15" font-weight="bold" fill="var(--ink)">[H-말뚝+토류판]</text>
+      <rect x="105" y="60" width="70" height="240" fill="var(--soil)"/>
+      <!-- 굴착저면 (왼쪽 빈 공간 바닥) -->
+      <line x1="30" y1="210" x2="100" y2="210" stroke="var(--ink)" stroke-width="3"/>
+      <!-- 토류판: 지표~굴착저면까지 벽의 배면쪽에 가로판 적층 -->
+      <g fill="var(--key)">
+        <rect x="101" y="66" width="8" height="20"/><rect x="101" y="90" width="8" height="20"/>
+        <rect x="101" y="114" width="8" height="20"/><rect x="101" y="138" width="8" height="20"/>
+        <rect x="101" y="162" width="8" height="20"/><rect x="101" y="186" width="8" height="20"/>
+      </g>
+      <!-- H말뚝: 굴착저면 아래까지 근입 -->
+      <line x1="97" y1="60" x2="97" y2="280" stroke="var(--wall)" stroke-width="7"/>
+      <text x="88" y="130" text-anchor="end" font-size="12" fill="var(--wall)" font-weight="bold">H말뚝</text>
+      <text x="88" y="148" text-anchor="end" font-size="12" fill="var(--key)">토류판→</text>
+      <!-- 근입 표시 -->
+      <line x1="60" y1="210" x2="60" y2="280" stroke="var(--muted)" stroke-width="1.5"/>
+      <polygon points="60,210 56,218 64,218" fill="var(--muted)"/>
+      <polygon points="60,280 56,272 64,272" fill="var(--muted)"/>
+      <text x="54" y="250" text-anchor="end" font-size="12" fill="var(--ink)">근입</text>
+      <text x="95" y="322" text-anchor="middle" font-size="12" fill="var(--muted)">판 사이 틈 → 지하수 샘(차수X)</text>
+
+      <!-- ===== 2. 널말뚝 ===== -->
+      <text x="277" y="30" text-anchor="middle" font-size="15" font-weight="bold" fill="var(--ink)">[널말뚝]</text>
+      <rect x="285" y="60" width="70" height="240" fill="var(--soil)"/>
+      <line x1="212" y1="210" x2="282" y2="210" stroke="var(--ink)" stroke-width="3"/>
+      <!-- 시트파일: 얇은 연속벽, 깊은 근입 -->
+      <line x1="281" y1="60" x2="281" y2="295" stroke="var(--wall)" stroke-width="6"/>
+      <!-- 물 차단 표시 -->
+      <path d="M 320 240 q -8 6 -16 0 q -8 -6 -16 0" fill="none" stroke="var(--sup)" stroke-width="2.5"/>
+      <line x1="300" y1="240" x2="288" y2="240" stroke="var(--sup)" stroke-width="2.5"/>
+      <text x="322" y="245" font-size="12" fill="var(--sup)">지하수 차단</text>
+      <text x="270" y="130" text-anchor="end" font-size="12" fill="var(--wall)" font-weight="bold">강널말뚝</text>
+      <text x="270" y="148" text-anchor="end" font-size="12" fill="var(--muted)">(이음 맞물림)</text>
+      <text x="277" y="322" text-anchor="middle" font-size="12" fill="var(--muted)">얇지만 연속·차수O / 깊은 근입</text>
+
+      <!-- ===== 3. 주열식 ===== -->
+      <text x="459" y="30" text-anchor="middle" font-size="15" font-weight="bold" fill="var(--ink)">[주열식 CIP]</text>
+      <rect x="470" y="60" width="70" height="240" fill="var(--soil)"/>
+      <line x1="395" y1="210" x2="462" y2="210" stroke="var(--ink)" stroke-width="3"/>
+      <!-- 콘크리트 기둥: 원형 표시 세로줄 -->
+      <rect x="454" y="60" width="14" height="225" fill="none" stroke="var(--wall)" stroke-width="4"/>
+      <g fill="var(--wall)" opacity="0.5">
+        <circle cx="461" cy="80" r="4"/><circle cx="461" cy="110" r="4"/><circle cx="461" cy="140" r="4"/>
+        <circle cx="461" cy="170" r="4"/><circle cx="461" cy="200" r="4"/><circle cx="461" cy="230" r="4"/>
+        <circle cx="461" cy="260" r="4"/>
+      </g>
+      <text x="448" y="130" text-anchor="end" font-size="12" fill="var(--wall)" font-weight="bold">현장타설</text>
+      <text x="448" y="148" text-anchor="end" font-size="12" fill="var(--wall)">콘크리트 기둥</text>
+      <text x="459" y="322" text-anchor="middle" font-size="12" fill="var(--muted)">기둥 이음부 관리(그라우팅)</text>
+
+      <!-- ===== 4. 지하연속벽 ===== -->
+      <text x="632" y="30" text-anchor="middle" font-size="15" font-weight="bold" fill="var(--ink)">[지하연속벽]</text>
+      <rect x="648" y="60" width="62" height="240" fill="var(--soil)"/>
+      <line x1="572" y1="210" x2="622" y2="210" stroke="var(--ink)" stroke-width="3"/>
+      <!-- 두꺼운 벽체, 가장 깊은 근입 -->
+      <rect x="622" y="60" width="24" height="250" fill="var(--wall)"/>
+      <text x="616" y="130" text-anchor="end" font-size="12" fill="var(--wall)" font-weight="bold">두꺼운 RC 통벽</text>
+      <text x="616" y="148" text-anchor="end" font-size="12" fill="var(--muted)">(슬러리 안정액 굴착)</text>
+      <text x="632" y="326" text-anchor="middle" font-size="12" fill="var(--muted)">차수·강성 최고, 본구조체 겸용 가능</text>
+    </svg>
+  </div>
+
+  <div class="memo">
+    암기: 지지 = <b>"자·버·앵·탑"</b> (자립·버팀대·앵커·탑다운=슬래브) / 구조 = <b>"엄·널·주·연"</b> (엄지말뚝·널말뚝·주열식·연속벽)<br>
+    <b>지지 = 어떻게 버티나 / 구조 = 벽을 뭘로 만드나</b> / 단면 공통 = <b>굴착저면 아래 근입 필수</b>
+  </div>
+</div>

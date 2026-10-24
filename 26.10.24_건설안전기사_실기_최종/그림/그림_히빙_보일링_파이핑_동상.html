@@ -1,0 +1,152 @@
+<title>히빙·보일링·파이핑·동상 — 원인과 대책</title>
+<style>
+  :root {
+    --bg: #faf9f6; --card: #ffffff; --ink: #26251f; --muted: #7d7a70;
+    --line: #e2dfd7; --wall: #3a5f8a; --soil: #d8cfc0; --key: #c2542a; --water: #3a7fd4; --sup: #3f7a45;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1c1b18; --card: #262420; --ink: #e8e6df; --muted: #9a968a;
+      --line: #3a3831; --wall: #7fa8d4; --soil: #4a4436; --key: #e07a4e; --water: #6fa8e8; --sup: #7fbf86; }
+  }
+  body { background: var(--bg); color: var(--ink);
+    font-family: "Malgun Gothic", "맑은 고딕", "Apple SD Gothic Neo", sans-serif;
+    line-height: 1.6; margin: 0; padding: 28px 16px 60px; }
+  .wrap { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+  h1 { font-size: 1.35rem; margin: 0; }
+  h1 .accent { color: var(--key); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 16px; overflow-x: auto; }
+  .card h2 { font-size: 1.02rem; margin: 0 0 4px; }
+  .card p.sub { margin: 0 0 12px; color: var(--muted); font-size: 0.88rem; }
+  svg { display: block; max-width: 100%; height: auto; }
+  .memo { text-align: center; font-size: 1.05rem; background: var(--card);
+    border: 1px dashed var(--line); border-radius: 8px; padding: 14px; }
+@media print{ body{background:#fff;} .card,.memo,.legend,svg{break-inside:avoid; page-break-inside:avoid;} }
+</style>
+
+<div class="wrap">
+  <h1>히빙 · 보일링 · 파이핑 · 동상 — <span class="accent">점토는 밀려 오르고, 모래는 물과 끓는다</span></h1>
+
+  <div class="card">
+    <h2>① 히빙(Heaving) — 연약 점토, 배면 무게가 바닥을 밀어 올림</h2>
+    <p class="sub">원인: 근입장 부족 · 배면 상재하중 과다 · 저면 지지력 부족</p>
+    <svg viewBox="0 0 720 300" role="img" aria-label="히빙: 배면 흙 무게가 굴착바닥을 밀어 올림">
+      <line x1="20" y1="60" x2="700" y2="60" stroke="var(--muted)" stroke-width="2"/>
+      <!-- 배면토 (오른쪽) -->
+      <rect x="380" y="60" width="320" height="220" fill="var(--soil)"/>
+      <!-- 흙막이 벽 -->
+      <line x1="380" y1="50" x2="380" y2="230" stroke="var(--wall)" stroke-width="9"/>
+      <text x="368" y="120" text-anchor="end" font-size="13" fill="var(--wall)" font-weight="bold">흙막이</text>
+      <!-- 굴착저면: 부풀어 오름 -->
+      <path d="M 40 200 Q 210 150 376 200" fill="var(--soil)" opacity="0.7" stroke="var(--key)" stroke-width="4"/>
+      <text x="210" y="140" text-anchor="middle" font-size="15" fill="var(--key)" font-weight="bold">바닥이 불룩 ↑ (히빙)</text>
+      <!-- 배면 하중 화살표 -->
+      <g stroke="var(--key)" stroke-width="4">
+        <line x1="480" y1="80" x2="480" y2="130"/><line x1="560" y1="80" x2="560" y2="130"/><line x1="640" y1="80" x2="640" y2="130"/>
+      </g>
+      <polygon points="480,135 474,122 486,122" fill="var(--key)"/>
+      <polygon points="560,135 554,122 566,122" fill="var(--key)"/>
+      <polygon points="640,135 634,122 646,122" fill="var(--key)"/>
+      <text x="560" y="75" text-anchor="middle" font-size="14" fill="var(--key)" font-weight="bold">배면 흙 무게(+상재하중) ↓</text>
+      <!-- 흐름 화살표: 벽 밑으로 돌아 들어옴 -->
+      <path d="M 520 180 Q 500 240 400 245 Q 320 248 250 195" fill="none" stroke="var(--key)" stroke-width="3.5" stroke-dasharray="8 5"/>
+      <polygon points="250,195 254,209 263,199" fill="var(--key)"/>
+      <text x="440" y="268" text-anchor="middle" font-size="13" fill="var(--key)">무거운 배면 흙이 벽 밑으로 돌아 들어옴</text>
+      <!-- 점토 표시 -->
+      <text x="120" y="250" font-size="14" fill="var(--muted)" font-weight="bold">연약 점토 지반</text>
+      <text x="30" y="290" font-size="13" fill="var(--sup)" font-weight="bold">대책: 근입장 깊게 · 배면 하중 줄임(흙 제거) · 저면 지반개량 · 굴착은 부분씩</text>
+    </svg>
+  </div>
+
+  <div class="card">
+    <h2>② 보일링(Boiling) — 사질토+지하수, 바닥에서 모래·물이 끓어오름</h2>
+    <p class="sub">수위차가 원동력 — 방지 = "근입·배수·차수·개량"</p>
+    <svg viewBox="0 0 720 300" role="img" aria-label="보일링: 수위차로 모래와 물이 굴착바닥에서 분출">
+      <line x1="20" y1="60" x2="700" y2="60" stroke="var(--muted)" stroke-width="2"/>
+      <rect x="380" y="60" width="320" height="220" fill="var(--soil)"/>
+      <line x1="380" y1="50" x2="380" y2="230" stroke="var(--wall)" stroke-width="9"/>
+      <!-- 배면 지하수위 (높음) -->
+      <line x1="390" y1="100" x2="700" y2="100" stroke="var(--water)" stroke-width="3" stroke-dasharray="10 5"/>
+      <text x="545" y="93" text-anchor="middle" font-size="13" fill="var(--water)" font-weight="bold">▽ 배면 지하수위 (높다)</text>
+      <!-- 굴착저면 -->
+      <line x1="40" y1="210" x2="376" y2="210" stroke="var(--ink)" stroke-width="3"/>
+      <text x="70" y="200" font-size="13" fill="var(--muted)">굴착저면 (낮다)</text>
+      <!-- 수위차 치수 -->
+      <line x1="340" y1="100" x2="340" y2="210" stroke="var(--water)" stroke-width="1.5"/>
+      <polygon points="340,100 336,108 344,108" fill="var(--water)"/>
+      <polygon points="340,210 336,202 344,202" fill="var(--water)"/>
+      <text x="332" y="160" text-anchor="end" font-size="13" fill="var(--water)" font-weight="bold">수위차 = 원동력</text>
+      <!-- 침투 흐름: 벽 밑 돌아 상승 -->
+      <path d="M 560 130 Q 540 250 400 255 Q 300 258 240 225" fill="none" stroke="var(--water)" stroke-width="3.5" stroke-dasharray="8 5"/>
+      <polygon points="240,225 246,238 253,227" fill="var(--water)"/>
+      <!-- 분출 (모래+물) -->
+      <g stroke="var(--water)" stroke-width="3">
+        <line x1="200" y1="208" x2="200" y2="170"/><line x1="230" y1="208" x2="230" y2="160"/><line x1="260" y1="208" x2="260" y2="172"/>
+      </g>
+      <polygon points="200,165 195,176 205,176" fill="var(--water)"/>
+      <polygon points="230,155 225,166 235,166" fill="var(--water)"/>
+      <polygon points="260,167 255,178 265,178" fill="var(--water)"/>
+      <g fill="var(--soil)" stroke="var(--muted)">
+        <circle cx="210" cy="150" r="4"/><circle cx="240" cy="140" r="4"/><circle cx="225" cy="128" r="4"/><circle cx="252" cy="152" r="4"/>
+      </g>
+      <text x="230" y="115" text-anchor="middle" font-size="15" fill="var(--water)" font-weight="bold">모래+물 부글부글 ↑</text>
+      <text x="120" y="250" font-size="14" fill="var(--muted)" font-weight="bold">사질토(모래) 지반</text>
+      <text x="30" y="290" font-size="13" fill="var(--sup)" font-weight="bold">대책: 근입장 깊게(불투수층까지) · 지하수위 저하(웰포인트) · 차수벽 · 약액주입 지반개량</text>
+    </svg>
+  </div>
+
+  <div class="card">
+    <h2>③ 파이핑(Piping) — 물길이 파이프처럼 뚫림 (보일링의 진행형)</h2>
+    <p class="sub">약한 곳으로 침투수가 집중 → 토사 유출 → 물길 확대 → 흙막이·제방 붕괴</p>
+    <svg viewBox="0 0 720 260" role="img" aria-label="파이핑: 흙 속에 파이프 모양 물길이 뚫려 토사 유출">
+      <line x1="20" y1="60" x2="700" y2="60" stroke="var(--muted)" stroke-width="2"/>
+      <rect x="380" y="60" width="320" height="170" fill="var(--soil)"/>
+      <line x1="380" y1="50" x2="380" y2="210" stroke="var(--wall)" stroke-width="9"/>
+      <line x1="390" y1="95" x2="700" y2="95" stroke="var(--water)" stroke-width="3" stroke-dasharray="10 5"/>
+      <text x="545" y="88" text-anchor="middle" font-size="13" fill="var(--water)" font-weight="bold">▽ 지하수위</text>
+      <!-- 파이프 물길 (관 모양 통로) -->
+      <path d="M 660 130 Q 520 150 430 190 Q 395 208 376 195" fill="none" stroke="var(--water)" stroke-width="14" opacity="0.5" stroke-linecap="round"/>
+      <path d="M 660 130 Q 520 150 430 190 Q 395 208 376 195" fill="none" stroke="var(--water)" stroke-width="4"/>
+      <polygon points="376,195 390,203 388,188" fill="var(--water)"/>
+      <text x="530" y="180" text-anchor="middle" font-size="15" fill="var(--water)" font-weight="bold">파이프 모양 물길</text>
+      <!-- 토사 유출 -->
+      <g fill="var(--soil)" stroke="var(--muted)">
+        <circle cx="350" cy="200" r="4"/><circle cx="330" cy="212" r="4"/><circle cx="310" cy="203" r="4"/>
+      </g>
+      <text x="290" y="230" text-anchor="middle" font-size="14" fill="var(--key)" font-weight="bold">토사가 물과 함께 유출 → 붕괴</text>
+      <text x="30" y="252" font-size="13" fill="var(--sup)" font-weight="bold">대책 = 보일링과 동일 (근입·배수·차수·개량) — 물길이 생기기 전에 물을 다스린다</text>
+    </svg>
+  </div>
+
+  <div class="card">
+    <h2>④ 동상(凍上) — 언 땅이 부풀어 오름</h2>
+    <p class="sub">흙 속 물이 얼음층(아이스렌즈)으로 자라며 지표를 들어올림 — 방지 = "치환·배수·단열·약액"</p>
+    <svg viewBox="0 0 720 240" role="img" aria-label="동상: 아이스렌즈가 지표를 들어올림, 대책 4가지">
+      <!-- 부풀어 오른 지표 -->
+      <path d="M 30 90 Q 200 40 370 90" fill="none" stroke="var(--key)" stroke-width="4"/>
+      <line x1="30" y1="90" x2="370" y2="90" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <text x="200" y="30" text-anchor="middle" font-size="15" fill="var(--key)" font-weight="bold">지표가 불룩 ↑ (동상)</text>
+      <!-- 얼음층 -->
+      <g fill="var(--water)" opacity="0.7">
+        <ellipse cx="120" cy="120" rx="40" ry="8"/><ellipse cx="230" cy="110" rx="50" ry="9"/><ellipse cx="310" cy="128" rx="35" ry="7"/>
+        <ellipse cx="170" cy="150" rx="45" ry="8"/><ellipse cx="280" cy="158" rx="40" ry="7"/>
+      </g>
+      <text x="205" y="185" text-anchor="middle" font-size="13" fill="var(--water)" font-weight="bold">아이스렌즈(얼음층)가 물을 빨아올리며 성장</text>
+      <!-- 지하수 공급 -->
+      <line x1="200" y1="225" x2="200" y2="195" stroke="var(--water)" stroke-width="3"/>
+      <polygon points="200,190 195,201 205,201" fill="var(--water)"/>
+      <text x="215" y="222" font-size="12" fill="var(--water)">지하수 공급</text>
+      <!-- 대책 박스 -->
+      <text x="420" y="70" font-size="14" fill="var(--ink)" font-weight="bold">동상 방지대책 4가지</text>
+      <text x="420" y="100" font-size="14" fill="var(--sup)">① 치환 — 비동결성 재료(자갈·쇄석)로 바꿈</text>
+      <text x="420" y="128" font-size="14" fill="var(--sup)">② 배수 — 지하수위 저하 (물 공급 차단)</text>
+      <text x="420" y="156" font-size="14" fill="var(--sup)">③ 단열 — 단열재 삽입 (얼지 않게)</text>
+      <text x="420" y="184" font-size="14" fill="var(--sup)">④ 약액 — 염화칼슘 등 화학처리 (어는점↓)</text>
+      <text x="420" y="215" font-size="13" fill="var(--muted)">암기: "치환·배수·단열·약액"</text>
+    </svg>
+  </div>
+
+  <div class="memo">
+    구분: <b>점토=히빙(무게로 밀려 오름) / 모래+물=보일링(수위차로 끓어오름) / 파이핑=물길 뚫림 / 동상=얼어서 부풂</b><br>
+    대책: 히빙 <b>"근입·하중줄임·개량"</b> / 보일링·파이핑 <b>"근입·배수·차수·개량"</b> / 동상 <b>"치환·배수·단열·약액"</b>
+  </div>
+</div>
